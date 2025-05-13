@@ -43,14 +43,14 @@ jobs:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         run: snyk iac test --sarif-file-output=snyk-iac.sarif
       - name: Upload SARIF results (Dependencies)
-        uses: actions/upload-sarif@v3
+        uses: actions/upload-sarif@v1
         with:
           sarif_file: snyk-dep.sarif
       - name: Upload SARIF results (Code Quality)
-        uses: actions/upload-sarif@v3
+        uses: actions/upload-sarif@v1
         with:
           sarif_file: snyk-code.sarif
       - name: Upload SARIF results (IaC)
-        uses: actions/upload-sarif@v3
+        uses: actions/upload-sarif@v1
         with:
           sarif_file: snyk-iac.sarif
