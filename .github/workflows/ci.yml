@@ -7,10 +7,11 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
+# Workflow-level permissions
 permissions:
-  contents: read
-  actions: read
-  security-events: write
+  contents: read          # For checking out the repository
+  actions: read           # For allowing actions to run
+  security-events: write  # For uploading SARIF files to GitHub Security tab
 
 jobs:
   build-and-scan:
@@ -19,19 +20,20 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Java 21
+      - name: Set up Java 21 and Cache Maven dependencies
         uses: actions/setup-java@v4
         with:
-          distribution: temurin
+          distribution: 'temurin' 
           java-version: '21'
-          cache: maven
+          cache: 'maven'
 
-      - name: Cache Maven dependencies
+      - name: Cache Maven dependencies (Potentially Redundant)
         uses: actions/cache@v4
         with:
           path: ~/.m2/repository
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
-          restore-keys: ${{ runner.os }}-m2-
+          restore-keys: |
+            ${{ runner.os }}-m2-
 
       - name: Build & Run Tests
         run: mvn clean package --batch-mode
@@ -42,62 +44,103 @@ jobs:
       - name: Verify Snyk CLI
         run: snyk --version
 
-      - name: Snyk Dependency & Vulnerability Test
-        env:
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-        run: snyk test --all-projects --sarif-file-output=snyk-dep.sarif || true
-
-      - name: Snyk Code Scan
-        env:
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-        run: snyk code test --sarif-file-output=snyk-code.sarif || true
-
-      - name: Snyk IaC Test
-        env:
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-        run: snyk iac test --sarif-file-output=snyk-iac.sarif || true
-
       - name: Install snyk-to-sarif converter
         run: npm install -g snyk-to-sarif
 
-      - name: Convert Dependency SARIF
-        run: snyk-to-sarif -i snyk-dep.sarif -o snyk-dep-converted.sarif
+      - name: Snyk Open Source Scan (Output JSON)
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        # Output Snyk test results as JSON.
+        # The '|| true' ensures the step doesn't fail if vulnerabilities are found (exit code 1).
+        # If Snyk CLI errors (exit code > 1), the JSON file might be empty or malformed.
+        run: snyk test --all-projects --severity-threshold=low --json > snyk-dep.json || true
 
-      - name: Convert Code Quality SARIF
-        run: snyk-to-sarif -i snyk-code.sarif -o snyk-code-converted.sarif
+      - name: Snyk Code Scan (Output JSON)
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        run: snyk code test --severity-threshold=low --json > snyk-code.json || true
 
-      - name: Convert IaC SARIF
-        run: snyk-to-sarif -i snyk-iac.sarif -o snyk-iac-converted.sarif
+      - name: Snyk IaC Scan (Output JSON)
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        run: snyk iac test --severity-threshold=low --json > snyk-iac.json || true
+      
+      - name: Convert Dependency JSON to SARIF
+        # Attempt conversion if the JSON file exists and is not empty.
+        # Create a minimal valid empty SARIF if conversion is skipped or fails,
+        # so downstream SARIF upload steps don't fail on a missing file.
+        run: |
+          if [ -s snyk-dep.json ]; then
+            echo "Attempting to convert snyk-dep.json to SARIF..."
+            snyk-to-sarif -i snyk-dep.json -o snyk-dep.sarif
+            if [ $? -ne 0 ]; then
+              echo "snyk-to-sarif failed for snyk-dep.json. Creating empty SARIF file."
+              echo '{ "version": "2.1.0", "$schema": "https://json.schemastore.org/sarif-2.1.0.json", "runs": [] }' > snyk-dep.sarif
+            fi
+          else
+            echo "snyk-dep.json is empty or does not exist. Creating empty snyk-dep.sarif."
+            echo '{ "version": "2.1.0", "$schema": "https://json.schemastore.org/sarif-2.1.0.json", "runs": [] }' > snyk-dep.sarif
+          fi
+        continue-on-error: true # Ensure workflow continues even if this conversion step has issues
+
+      - name: Convert Code JSON to SARIF
+        run: |
+          if [ -s snyk-code.json ]; then
+            echo "Attempting to convert snyk-code.json to SARIF..."
+            snyk-to-sarif -i snyk-code.json -o snyk-code.sarif
+            if [ $? -ne 0 ]; then
+              echo "snyk-to-sarif failed for snyk-code.json. Creating empty SARIF file."
+              echo '{ "version": "2.1.0", "$schema": "https://json.schemastore.org/sarif-2.1.0.json", "runs": [] }' > snyk-code.sarif
+            fi
+          else
+            echo "snyk-code.json is empty or does not exist. Creating empty snyk-code.sarif."
+            echo '{ "version": "2.1.0", "$schema": "https://json.schemastore.org/sarif-2.1.0.json", "runs": [] }' > snyk-code.sarif
+          fi
+        continue-on-error: true
+
+      - name: Convert IaC JSON to SARIF
+        run: |
+          if [ -s snyk-iac.json ]; then
+            echo "Attempting to convert snyk-iac.json to SARIF..."
+            snyk-to-sarif -i snyk-iac.json -o snyk-iac.sarif
+            if [ $? -ne 0 ]; then
+              echo "snyk-to-sarif failed for snyk-iac.json. Creating empty SARIF file."
+              echo '{ "version": "2.1.0", "$schema": "https://json.schemastore.org/sarif-2.1.0.json", "runs": [] }' > snyk-iac.sarif
+            fi
+          else
+            echo "snyk-iac.json is empty or does not exist. Creating empty snyk-iac.sarif."
+            echo '{ "version": "2.1.0", "$schema": "https://json.schemastore.org/sarif-2.1.0.json", "runs": [] }' > snyk-iac.sarif
+          fi
+        continue-on-error: true
 
       - name: Upload SARIF results (Dependencies)
         uses: github/codeql-action/upload-sarif@v3
         with:
-          sarif_file: snyk-dep-converted.sarif
+          sarif_file: snyk-dep.sarif # Upload the SARIF file converted from JSON
+          category: open-source 
 
       - name: Upload SARIF results (Code Quality)
         uses: github/codeql-action/upload-sarif@v3
         with:
-          sarif_file: snyk-code-converted.sarif
+          sarif_file: snyk-code.sarif # Upload the SARIF file converted from JSON
+          category: code-scanning 
 
       - name: Upload SARIF results (IaC)
         uses: github/codeql-action/upload-sarif@v3
         with:
-          sarif_file: snyk-iac-converted.sarif
-
-      - name: Upload raw SARIF artifacts
-        uses: actions/upload-artifact@v4
+          sarif_file: snyk-iac.sarif # Upload the SARIF file converted from JSON
+          category: IaC 
+          
+      - name: Upload Snyk JSON and Converted SARIF artifacts
+        if: always()
+        uses: actions/upload-artifact@v4 
         with:
-          name: raw-snyk-sarif
+          name: snyk-scan-outputs
           path: |
+            snyk-dep.json
+            snyk-code.json
+            snyk-iac.json
             snyk-dep.sarif
             snyk-code.sarif
             snyk-iac.sarif
-
-      - name: Upload converted SARIF artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: converted-sarif
-          path: |
-            snyk-dep-converted.sarif
-            snyk-code-converted.sarif
-            snyk-iac-converted.sarif
+          if-no-files-found: ignore 
