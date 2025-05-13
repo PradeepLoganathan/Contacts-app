@@ -119,11 +119,11 @@ jobs:
           sarif_file: snyk-dep.sarif # Upload the SARIF file converted from JSON
           category: open-source 
 
-      - name: Upload SARIF results (Code Quality)
-        uses: github/codeql-action/upload-sarif@v3
-        with:
-          sarif_file: snyk-code.sarif # Upload the SARIF file converted from JSON
-          category: code-scanning 
+      # - name: Upload SARIF results (Code Quality)
+      #   uses: github/codeql-action/upload-sarif@v3
+      #   with:
+      #     sarif_file: snyk-code.sarif # Upload the SARIF file converted from JSON
+      #     category: code-scanning 
 
       - name: Upload SARIF results (IaC)
         uses: github/codeql-action/upload-sarif@v3
