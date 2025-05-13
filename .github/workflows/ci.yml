@@ -74,10 +74,10 @@ jobs:
         with:
           sarif_file: snyk-iac.sarif
           category: IaC
-          
+
       # Upload SARIF files as build artifacts for manual download
       - name: Upload SARIF Artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v2
         with:
           name: snyk-sarif-files
           path: |
