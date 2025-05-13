@@ -5,6 +5,7 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+  workflow_dispatch:
 
 jobs:
   build-and-scan:
@@ -26,7 +27,7 @@ jobs:
       - name: Build & Run Tests
         run: mvn clean package --batch-mode
       - name: Setup Snyk CLI
-        uses: snyk/actions/setup-snyk@v2
+        uses: snyk/actions/setup-snyk@master
         with:
           version: 'latest'
       - name: Snyk Dependency & Vulnerability Test
