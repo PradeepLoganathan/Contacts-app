@@ -7,14 +7,14 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
+permissions:
+  contents: read
+  actions: read
+  security-events: write
+
 jobs:
   build-and-scan:
     runs-on: ubuntu-latest
-    permissions:
-      security-events: write 
-      actions: read         
-      contents: read        
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -25,7 +25,7 @@ jobs:
           distribution: temurin
           java-version: '21'
           cache: maven
-      
+
       - name: Cache Maven dependencies
         uses: actions/cache@v4
         with:
@@ -57,30 +57,47 @@ jobs:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         run: snyk iac test --sarif-file-output=snyk-iac.sarif || true
 
+      - name: Install snyk-to-sarif converter
+        run: npm install -g snyk-to-sarif
+
+      - name: Convert Dependency SARIF
+        run: snyk-to-sarif -i snyk-dep.sarif -o snyk-dep-converted.sarif
+
+      - name: Convert Code Quality SARIF
+        run: snyk-to-sarif -i snyk-code.sarif -o snyk-code-converted.sarif
+
+      - name: Convert IaC SARIF
+        run: snyk-to-sarif -i snyk-iac.sarif -o snyk-iac-converted.sarif
+
       - name: Upload SARIF results (Dependencies)
-        uses: github/codeql-action/upload-sarif@v3 
+        uses: github/codeql-action/upload-sarif@v3
         with:
-          sarif_file: snyk-dep.sarif
-          category: open-source 
+          sarif_file: snyk-dep-converted.sarif
 
       - name: Upload SARIF results (Code Quality)
         uses: github/codeql-action/upload-sarif@v3
         with:
-          sarif_file: snyk-code.sarif
-          category: code-scanning
+          sarif_file: snyk-code-converted.sarif
 
       - name: Upload SARIF results (IaC)
         uses: github/codeql-action/upload-sarif@v3
         with:
-          sarif_file: snyk-iac.sarif
-          category: IaC
+          sarif_file: snyk-iac-converted.sarif
 
-      # Upload SARIF files as build artifacts for manual download
-      - name: Upload SARIF Artifacts
+      - name: Upload raw SARIF artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: snyk-sarif-files
+          name: raw-snyk-sarif
           path: |
             snyk-dep.sarif
             snyk-code.sarif
             snyk-iac.sarif
+
+      - name: Upload converted SARIF artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: converted-sarif
+          path: |
+            snyk-dep-converted.sarif
+            snyk-code-converted.sarif
+            snyk-iac-converted.sarif
