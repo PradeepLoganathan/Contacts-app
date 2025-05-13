@@ -77,7 +77,7 @@ jobs:
 
       # Upload SARIF files as build artifacts for manual download
       - name: Upload SARIF Artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: snyk-sarif-files
           path: |
