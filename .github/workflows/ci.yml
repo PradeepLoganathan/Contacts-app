@@ -17,7 +17,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4 
+        uses: actions/checkout@v4
 
       - name: Set up Java 21
         uses: actions/setup-java@v4
@@ -58,14 +58,29 @@ jobs:
         run: snyk iac test --sarif-file-output=snyk-iac.sarif || true
 
       - name: Upload SARIF results (Dependencies)
-        uses: github/codeql-action/upload-sarif@v2
+        uses: github/codeql-action/upload-sarif@v3 
         with:
           sarif_file: snyk-dep.sarif
+          category: open-source 
+
       - name: Upload SARIF results (Code Quality)
         uses: github/codeql-action/upload-sarif@v3
         with:
           sarif_file: snyk-code.sarif
+          category: code-scanning
+
       - name: Upload SARIF results (IaC)
         uses: github/codeql-action/upload-sarif@v3
         with:
           sarif_file: snyk-iac.sarif
+          category: IaC
+          
+      # Upload SARIF files as build artifacts for manual download
+      - name: Upload SARIF Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: snyk-sarif-files
+          path: |
+            snyk-dep.sarif
+            snyk-code.sarif
+            snyk-iac.sarif
