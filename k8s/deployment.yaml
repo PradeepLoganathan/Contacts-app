@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: contacts-app
+  labels:
+    app: contacts
+spec:
+  replicas: 5                                  # ▶️ over-provisioned
+  selector:
+    matchLabels:
+      app: contacts
+  template:
+    metadata:
+      labels:
+        app: contacts
+    spec:
+      hostNetwork: true                        # ▶️ exposes host’s network namespace
+      containers:
+      - name: contacts-app
+        image: openjdk:latest                  # ▶️ unpinned “latest” tag
+        imagePullPolicy: Always                # ▶️ forces frequent pulls even if not needed
+        ports:
+        - containerPort: 9090
+        securityContext:
+          privileged: true                      # ▶️ full root in container
+          runAsNonRoot: false                   # ▶️ explicitly allows root
+          allowPrivilegeEscalation: true        # ▶️ allows setuid binaries, etc.
+          capabilities:
+            add: ["SYS_ADMIN"]                 # ▶️ dangerous Linux capability
+        # ▶️ missing any CPU/memory resource requests or limits
+        volumeMounts:
+        - name: host-volume
+          mountPath: /data
+      volumes:
+      - name: host-volume
+        hostPath:                            # ▶️ hostPath volume: arbitrary host FS access
+          path: /var/lib/contacts-data
+          type: DirectoryOrCreate

@@ -1,0 +1,40 @@
+# Maven build
+/target/
+/pom.xml.tag
+/pom.xml.releaseBackup
+/pom.xml.versionsBackup
+/dependency-reduced-pom.xml
+/release.properties
+/buildNumber.properties
+
+# Eclipse / IntelliJ / VS Code
+/.idea/
+/*.iml
+/.classpath
+/.project
+/.settings/
+/.vscode/
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+spring.log
+
+# H2 Console data
+/data/
+
+# Spring Boot
+/.spring-boot-devtools
+
+# Application.properties overrides
+!/src/main/resources/application.properties
+src/main/resources/application-*.properties
+
+
+
+# Secrets / env files
+*.env
