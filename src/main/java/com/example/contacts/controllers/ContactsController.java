@@ -26,6 +26,7 @@ import jakarta.validation.Valid;
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.InputStreamReader;
+import org.apache.commons.lang.StringEscapeUtils;
 import java.io.ObjectInputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -180,7 +181,7 @@ public class ContactsController {
                 out.append(line).append("\n");
             }
             return out.toString();
-        }
+            return StringEscapeUtils.escapeHtml(out.toString());
     }
 
     /**
