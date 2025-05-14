@@ -1,6 +1,7 @@
 # Intentionally Vulnerable Contacts Demo Application
 
 > A Spring Boot REST API intentionally designed with security flaws to showcase Snyk’s full lifecycle scanning capabilities.
+![alt text](snyk-workflow.png)
 
 ---
 
