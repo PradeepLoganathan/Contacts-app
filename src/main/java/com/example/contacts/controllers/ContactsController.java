@@ -1,20 +1,27 @@
 package com.example.contacts.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.server.ResponseStatusException;
 
 import com.example.contacts.models.Contact;
 import com.example.contacts.repositories.ContactRepository;
 
 import jakarta.persistence.Query;
 import jakarta.persistence.EntityManager;
+import jakarta.validation.Valid; 
 
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
@@ -23,6 +30,8 @@ import java.io.ObjectInputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 
 @RestController
 public class ContactsController {
@@ -39,6 +48,108 @@ public class ContactsController {
     List<Contact> all() {
         return repository.findAll();
     }
+
+    /**
+     * POST /contacts : Create a new contact.
+     * @param newContact The contact to create.
+     * @return The created contact with HTTP status 201 (Created).
+     */
+    @PostMapping("/contacts")
+    public ResponseEntity<Contact> createContact(@Valid @RequestBody Contact newContact) {
+        // Ensure ID is null so that the database generates it
+        if (newContact.getId() != null) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "ID must be null for new contact creation.");
+        }
+        Contact savedContact = repository.save(newContact);
+        return new ResponseEntity<>(savedContact, HttpStatus.CREATED);
+    }
+
+    /**
+     * GET /contacts/{id} : Get a specific contact by its ID.
+     * @param id The ID of the contact.
+     * @return The contact if found, otherwise HTTP status 404 (Not Found).
+     */
+    @GetMapping("/contacts/{id}")
+    public ResponseEntity<Contact> getContactById(@PathVariable Long id) {
+        return repository.findById(id)
+                .map(contact -> ResponseEntity.ok(contact))
+                .orElse(ResponseEntity.notFound().build());
+    }
+
+    /**
+     * PUT /contacts/{id} : Update an existing contact or create it if it doesn't exist (upsert).
+     * More commonly, PUT is used for full replacement of an existing resource.
+     * @param id The ID of the contact to update.
+     * @param updatedContact The updated contact data.
+     * @return The updated contact with HTTP status 200 (OK) or 201 (Created) if new.
+     */
+    @PutMapping("/contacts/{id}")
+    public ResponseEntity<Contact> updateContact(@PathVariable Long id, @Valid @RequestBody Contact updatedContact) {
+        return repository.findById(id)
+                .map(contact -> {
+                    contact.setName(updatedContact.getName());
+                    contact.setEmail(updatedContact.getEmail());
+                    contact.setPhone(updatedContact.getPhone());
+                    // Set other fields as necessary
+                    Contact savedContact = repository.save(contact);
+                    return ResponseEntity.ok(savedContact);
+                })
+                .orElseGet(() -> { // If contact with ID not found, create a new one (typical PUT behavior)
+                    // It's often debated if PUT should create if not exists.
+                    // For this example, we'll allow creation if ID is provided in path but not in DB.
+                    // Ensure the ID from the path is set on the new contact object.
+                    updatedContact.setId(id); // Or handle as an error if strict update-only is desired
+                    Contact savedContact = repository.save(updatedContact);
+                    return new ResponseEntity<>(savedContact, HttpStatus.CREATED);
+                });
+    }
+    
+    /**
+     * PATCH /contacts/{id} : Partially update an existing contact.
+     * @param id The ID of the contact to update.
+     * @param updates A map of fields to update.
+     * @return The updated contact with HTTP status 200 (OK), or 404 (Not Found).
+     */
+    @PatchMapping("/contacts/{id}")
+    public ResponseEntity<Contact> partiallyUpdateContact(@PathVariable Long id, @RequestBody Map<String, Object> updates) {
+        return repository.findById(id)
+                .map(contact -> {
+                    updates.forEach((key, value) -> {
+                        switch (key) {
+                            case "name":
+                                contact.setName((String) value);
+                                break;
+                            case "email":
+                                contact.setEmail((String) value);
+                                break;
+                            case "phone":
+                                contact.setPhone((String) value);
+                                break;
+                            // Add other fields as necessary
+                        }
+                    });
+                    Contact savedContact = repository.save(contact);
+                    return ResponseEntity.ok(savedContact);
+                })
+                .orElse(ResponseEntity.notFound().build());
+    }
+
+
+    /**
+     * DELETE /contacts/{id} : Delete a specific contact by its ID.
+     * @param id The ID of the contact to delete.
+     * @return HTTP status 204 (No Content) if successful, or 404 (Not Found).
+     */
+    @DeleteMapping("/contacts/{id}")
+    public ResponseEntity<Void> deleteContact(@PathVariable Long id) {
+        if (repository.existsById(id)) {
+            repository.deleteById(id);
+            return ResponseEntity.noContent().build();
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
 
     /**
      * VERY VULNERABLE: SQL built via string concat.
