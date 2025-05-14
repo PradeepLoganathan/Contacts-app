@@ -9,7 +9,7 @@ ENV DB_HOST=localhost
 ENV DB_PORT=5432
 ENV DB_USER=admin
 ENV DB_PASSWORD=Admin123
-
+#test connection
 # ------------------------
 # Unsafe package install: no pinning, no GPG verification
 # ------------------------

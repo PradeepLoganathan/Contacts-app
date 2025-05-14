@@ -1,0 +1,1051 @@
+
+Testing contactsapp:1.0...
+
+✗ Low severity vulnerability found in xz-utils/liblzma5
+  Description: Race Condition
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-XZUTILS-9652973
+  Introduced through: xz-utils/liblzma5@5.4.1-0.2, apt@2.6.1, dash@0.5.12-2
+  From: xz-utils/liblzma5@5.4.1-0.2
+  From: apt@2.6.1 > apt/libapt-pkg6.0@2.6.1 > xz-utils/liblzma5@5.4.1-0.2
+  From: dash@0.5.12-2 > dpkg@1.21.22 > xz-utils/liblzma5@5.4.1-0.2
+  and 1 more...
+  Image layer: Introduced by your base image (openjdk:21-jdk-slim)
+  Fixed in: 5.4.1-1
+
+✗ Low severity vulnerability found in util-linux/libblkid1
+  Description: Information Exposure
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-UTILLINUX-2401083
+  Introduced through: util-linux/libblkid1@2.38.1-5+b1, e2fsprogs@1.47.0-2, util-linux/libmount1@2.38.1-5+b1, util-linux/mount@2.38.1-5+b1, util-linux/util-linux@2.38.1-5+b1, util-linux/libuuid1@2.38.1-5+b1, util-linux/bsdutils@1:2.38.1-5+b1, util-linux/libsmartcols1@2.38.1-5+b1, util-linux/util-linux-extra@2.38.1-5+b1
+  From: util-linux/libblkid1@2.38.1-5+b1
+  From: e2fsprogs@1.47.0-2 > util-linux/libblkid1@2.38.1-5+b1
+  From: util-linux/libmount1@2.38.1-5+b1 > util-linux/libblkid1@2.38.1-5+b1
+  and 17 more...
+  Image layer: 'apt-get install -y curl'
+
+✗ Low severity vulnerability found in util-linux/libblkid1
+  Description: CVE-2024-28085
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-UTILLINUX-6508631
+  Introduced through: util-linux/libblkid1@2.38.1-5+b1, e2fsprogs@1.47.0-2, util-linux/libmount1@2.38.1-5+b1, util-linux/mount@2.38.1-5+b1, util-linux/util-linux@2.38.1-5+b1, util-linux/libuuid1@2.38.1-5+b1, util-linux/bsdutils@1:2.38.1-5+b1, util-linux/libsmartcols1@2.38.1-5+b1, util-linux/util-linux-extra@2.38.1-5+b1
+  From: util-linux/libblkid1@2.38.1-5+b1
+  From: e2fsprogs@1.47.0-2 > util-linux/libblkid1@2.38.1-5+b1
+  From: util-linux/libmount1@2.38.1-5+b1 > util-linux/libblkid1@2.38.1-5+b1
+  and 17 more...
+  Image layer: 'apt-get install -y curl'
+  Fixed in: 2.38.1-5+deb12u1
+
+✗ Low severity vulnerability found in tar
+  Description: CVE-2005-2541
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-TAR-1560620
+  Introduced through: tar@1.34+dfsg-1.2, dash@0.5.12-2
+  From: tar@1.34+dfsg-1.2
+  From: dash@0.5.12-2 > dpkg@1.21.22 > tar@1.34+dfsg-1.2
+  Image layer: Introduced by your base image (openjdk:21-jdk-slim)
+
+✗ Low severity vulnerability found in tar
+  Description: CVE-2023-39804
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-TAR-6120422
+  Introduced through: tar@1.34+dfsg-1.2, dash@0.5.12-2
+  From: tar@1.34+dfsg-1.2
+  From: dash@0.5.12-2 > dpkg@1.21.22 > tar@1.34+dfsg-1.2
+  Image layer: Introduced by your base image (openjdk:21-jdk-slim)
+  Fixed in: 1.34+dfsg-1.2+deb12u1
+
+✗ Low severity vulnerability found in systemd/libsystemd0
+  Description: Link Following
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-SYSTEMD-1560739
+  Introduced through: systemd/libsystemd0@252.12-1~deb12u1, apt@2.6.1, util-linux/bsdutils@1:2.38.1-5+b1, util-linux/util-linux@2.38.1-5+b1, systemd/libudev1@252.12-1~deb12u1
+  From: systemd/libsystemd0@252.12-1~deb12u1
+  From: apt@2.6.1 > systemd/libsystemd0@252.12-1~deb12u1
+  From: util-linux/bsdutils@1:2.38.1-5+b1 > systemd/libsystemd0@252.12-1~deb12u1
+  and 5 more...
+  Image layer: 'apt-get install -y curl'
+
+✗ Low severity vulnerability found in systemd/libsystemd0
+  Description: Improper Validation of Integrity Check Value
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-SYSTEMD-5733385
+  Introduced through: systemd/libsystemd0@252.12-1~deb12u1, apt@2.6.1, util-linux/bsdutils@1:2.38.1-5+b1, util-linux/util-linux@2.38.1-5+b1, systemd/libudev1@252.12-1~deb12u1
+  From: systemd/libsystemd0@252.12-1~deb12u1
+  From: apt@2.6.1 > systemd/libsystemd0@252.12-1~deb12u1
+  From: util-linux/bsdutils@1:2.38.1-5+b1 > systemd/libsystemd0@252.12-1~deb12u1
+  and 5 more...
+  Image layer: 'apt-get install -y curl'
+
+✗ Low severity vulnerability found in systemd/libsystemd0
+  Description: Improper Validation of Integrity Check Value
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-SYSTEMD-5733390
+  Introduced through: systemd/libsystemd0@252.12-1~deb12u1, apt@2.6.1, util-linux/bsdutils@1:2.38.1-5+b1, util-linux/util-linux@2.38.1-5+b1, systemd/libudev1@252.12-1~deb12u1
+  From: systemd/libsystemd0@252.12-1~deb12u1
+  From: apt@2.6.1 > systemd/libsystemd0@252.12-1~deb12u1
+  From: util-linux/bsdutils@1:2.38.1-5+b1 > systemd/libsystemd0@252.12-1~deb12u1
+  and 5 more...
+  Image layer: 'apt-get install -y curl'
+
+✗ Low severity vulnerability found in systemd/libsystemd0
+  Description: Improper Validation of Integrity Check Value
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-SYSTEMD-5733398
+  Introduced through: systemd/libsystemd0@252.12-1~deb12u1, apt@2.6.1, util-linux/bsdutils@1:2.38.1-5+b1, util-linux/util-linux@2.38.1-5+b1, systemd/libudev1@252.12-1~deb12u1
+  From: systemd/libsystemd0@252.12-1~deb12u1
+  From: apt@2.6.1 > systemd/libsystemd0@252.12-1~deb12u1
+  From: util-linux/bsdutils@1:2.38.1-5+b1 > systemd/libsystemd0@252.12-1~deb12u1
+  and 5 more...
+  Image layer: 'apt-get install -y curl'
+
+✗ Low severity vulnerability found in systemd/libsystemd0
+  Description: CVE-2023-50868
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-SYSTEMD-6277509
+  Introduced through: systemd/libsystemd0@252.12-1~deb12u1, apt@2.6.1, util-linux/bsdutils@1:2.38.1-5+b1, util-linux/util-linux@2.38.1-5+b1, systemd/libudev1@252.12-1~deb12u1
+  From: systemd/libsystemd0@252.12-1~deb12u1
+  From: apt@2.6.1 > systemd/libsystemd0@252.12-1~deb12u1
+  From: util-linux/bsdutils@1:2.38.1-5+b1 > systemd/libsystemd0@252.12-1~deb12u1
+  and 5 more...
+  Image layer: 'apt-get install -y curl'
+  Fixed in: 252.23-1~deb12u1
+
+✗ Low severity vulnerability found in shadow/passwd
+  Description: Access Restriction Bypass
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-SHADOW-1559391
+  Introduced through: shadow/passwd@1:4.13+dfsg1-1+b1, adduser@3.134, shadow/login@1:4.13+dfsg1-1+b1
+  From: shadow/passwd@1:4.13+dfsg1-1+b1
+  From: adduser@3.134 > shadow/passwd@1:4.13+dfsg1-1+b1
+  From: shadow/login@1:4.13+dfsg1-1+b1
+  Image layer: Introduced by your base image (openjdk:21-jdk-slim)
+
+✗ Low severity vulnerability found in shadow/passwd
+  Description: Arbitrary Code Injection
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-SHADOW-5423923
+  Introduced through: shadow/passwd@1:4.13+dfsg1-1+b1, adduser@3.134, shadow/login@1:4.13+dfsg1-1+b1
+  From: shadow/passwd@1:4.13+dfsg1-1+b1
+  From: adduser@3.134 > shadow/passwd@1:4.13+dfsg1-1+b1
+  From: shadow/login@1:4.13+dfsg1-1+b1
+  Image layer: Introduced by your base image (openjdk:21-jdk-slim)
+
+✗ Low severity vulnerability found in shadow/passwd
+  Description: Improper Authentication
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-SHADOW-5879156
+  Introduced through: shadow/passwd@1:4.13+dfsg1-1+b1, adduser@3.134, shadow/login@1:4.13+dfsg1-1+b1
+  From: shadow/passwd@1:4.13+dfsg1-1+b1
+  From: adduser@3.134 > shadow/passwd@1:4.13+dfsg1-1+b1
+  From: shadow/login@1:4.13+dfsg1-1+b1
+  Image layer: Introduced by your base image (openjdk:21-jdk-slim)
+
+✗ Low severity vulnerability found in shadow/passwd
+  Description: CVE-2024-56433
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-SHADOW-8551160
+  Introduced through: shadow/passwd@1:4.13+dfsg1-1+b1, adduser@3.134, shadow/login@1:4.13+dfsg1-1+b1
+  From: shadow/passwd@1:4.13+dfsg1-1+b1
+  From: adduser@3.134 > shadow/passwd@1:4.13+dfsg1-1+b1
+  From: shadow/login@1:4.13+dfsg1-1+b1
+  Image layer: Introduced by your base image (openjdk:21-jdk-slim)
+
+✗ Low severity vulnerability found in perl/perl-base
+  Description: Link Following
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-PERL-1556505
+  Introduced through: perl/perl-base@5.36.0-7
+  From: perl/perl-base@5.36.0-7
+  Image layer: Introduced by your base image (openjdk:21-jdk-slim)
+
+✗ Low severity vulnerability found in perl/perl-base
+  Description: Improper Certificate Validation
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-PERL-5489184
+  Introduced through: perl/perl-base@5.36.0-7
+  From: perl/perl-base@5.36.0-7
+  Image layer: Introduced by your base image (openjdk:21-jdk-slim)
+
+✗ Low severity vulnerability found in perl/perl-base
+  Description: Improper Certificate Validation
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-PERL-5489190
+  Introduced through: perl/perl-base@5.36.0-7
+  From: perl/perl-base@5.36.0-7
+  Image layer: Introduced by your base image (openjdk:21-jdk-slim)
+
+✗ Low severity vulnerability found in perl/perl-base
+  Description: Out-of-bounds Write
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-PERL-9689899
+  Introduced through: perl/perl-base@5.36.0-7
+  From: perl/perl-base@5.36.0-7
+  Image layer: Introduced by your base image (openjdk:21-jdk-slim)
+  Fixed in: 5.36.0-7+deb12u2
+
+✗ Low severity vulnerability found in pam/libpam0g
+  Description: CVE-2024-22365
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-PAM-6178914
+  Introduced through: pam/libpam0g@1.5.2-6, shadow/login@1:4.13+dfsg1-1+b1, util-linux/util-linux@2.38.1-5+b1, adduser@3.134, pam/libpam-modules-bin@1.5.2-6, pam/libpam-modules@1.5.2-6, pam/libpam-runtime@1.5.2-6
+  From: pam/libpam0g@1.5.2-6
+  From: shadow/login@1:4.13+dfsg1-1+b1 > pam/libpam0g@1.5.2-6
+  From: util-linux/util-linux@2.38.1-5+b1 > pam/libpam0g@1.5.2-6
+  and 11 more...
+  Image layer: 'apt-get install -y curl'
+
+✗ Low severity vulnerability found in pam/libpam0g
+  Description: Insecure Storage of Sensitive Information
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-PAM-8303301
+  Introduced through: pam/libpam0g@1.5.2-6, shadow/login@1:4.13+dfsg1-1+b1, util-linux/util-linux@2.38.1-5+b1, adduser@3.134, pam/libpam-modules-bin@1.5.2-6, pam/libpam-modules@1.5.2-6, pam/libpam-runtime@1.5.2-6
+  From: pam/libpam0g@1.5.2-6
+  From: shadow/login@1:4.13+dfsg1-1+b1 > pam/libpam0g@1.5.2-6
+  From: util-linux/util-linux@2.38.1-5+b1 > pam/libpam0g@1.5.2-6
+  and 11 more...
+  Image layer: 'apt-get install -y curl'
+
+✗ Low severity vulnerability found in openssl/libssl3
+  Description: CVE-2023-6237
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-OPENSSL-6157243
+  Introduced through: cyrus-sasl2/libsasl2-modules@2.1.28+dfsg-10, ca-certificates@20230311, curl@7.88.1-10+deb12u12
+  From: cyrus-sasl2/libsasl2-modules@2.1.28+dfsg-10 > openssl/libssl3@3.0.9-1
+  From: ca-certificates@20230311 > openssl@3.0.9-1 > openssl/libssl3@3.0.9-1
+  From: curl@7.88.1-10+deb12u12 > curl/libcurl4@7.88.1-10+deb12u12 > openssl/libssl3@3.0.9-1
+  and 3 more...
+  Image layer: 'apt-get install -y curl'
+  Fixed in: 3.0.13-1~deb12u1
+
+✗ Low severity vulnerability found in openssl/libssl3
+  Description: CVE-2024-2511
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-OPENSSL-6592092
+  Introduced through: cyrus-sasl2/libsasl2-modules@2.1.28+dfsg-10, ca-certificates@20230311, curl@7.88.1-10+deb12u12
+  From: cyrus-sasl2/libsasl2-modules@2.1.28+dfsg-10 > openssl/libssl3@3.0.9-1
+  From: ca-certificates@20230311 > openssl@3.0.9-1 > openssl/libssl3@3.0.9-1
+  From: curl@7.88.1-10+deb12u12 > curl/libcurl4@7.88.1-10+deb12u12 > openssl/libssl3@3.0.9-1
+  and 3 more...
+  Image layer: 'apt-get install -y curl'
+  Fixed in: 3.0.14-1~deb12u1
+
+✗ Low severity vulnerability found in openssl/libssl3
+  Description: CVE-2024-4603
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-OPENSSL-6861561
+  Introduced through: cyrus-sasl2/libsasl2-modules@2.1.28+dfsg-10, ca-certificates@20230311, curl@7.88.1-10+deb12u12
+  From: cyrus-sasl2/libsasl2-modules@2.1.28+dfsg-10 > openssl/libssl3@3.0.9-1
+  From: ca-certificates@20230311 > openssl@3.0.9-1 > openssl/libssl3@3.0.9-1
+  From: curl@7.88.1-10+deb12u12 > curl/libcurl4@7.88.1-10+deb12u12 > openssl/libssl3@3.0.9-1
+  and 3 more...
+  Image layer: 'apt-get install -y curl'
+  Fixed in: 3.0.14-1~deb12u1
+
+✗ Low severity vulnerability found in openssl/libssl3
+  Description: CVE-2024-4741
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-OPENSSL-7151359
+  Introduced through: cyrus-sasl2/libsasl2-modules@2.1.28+dfsg-10, ca-certificates@20230311, curl@7.88.1-10+deb12u12
+  From: cyrus-sasl2/libsasl2-modules@2.1.28+dfsg-10 > openssl/libssl3@3.0.9-1
+  From: ca-certificates@20230311 > openssl@3.0.9-1 > openssl/libssl3@3.0.9-1
+  From: curl@7.88.1-10+deb12u12 > curl/libcurl4@7.88.1-10+deb12u12 > openssl/libssl3@3.0.9-1
+  and 3 more...
+  Image layer: 'apt-get install -y curl'
+  Fixed in: 3.0.14-1~deb12u1
+
+✗ Low severity vulnerability found in openssl/libssl3
+  Description: CVE-2024-5535
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-OPENSSL-7411350
+  Introduced through: cyrus-sasl2/libsasl2-modules@2.1.28+dfsg-10, ca-certificates@20230311, curl@7.88.1-10+deb12u12
+  From: cyrus-sasl2/libsasl2-modules@2.1.28+dfsg-10 > openssl/libssl3@3.0.9-1
+  From: ca-certificates@20230311 > openssl@3.0.9-1 > openssl/libssl3@3.0.9-1
+  From: curl@7.88.1-10+deb12u12 > curl/libcurl4@7.88.1-10+deb12u12 > openssl/libssl3@3.0.9-1
+  and 3 more...
+  Image layer: 'apt-get install -y curl'
+  Fixed in: 3.0.15-1~deb12u1
+
+✗ Low severity vulnerability found in openssl/libssl3
+  Description: CVE-2024-6119
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-OPENSSL-7886317
+  Introduced through: cyrus-sasl2/libsasl2-modules@2.1.28+dfsg-10, ca-certificates@20230311, curl@7.88.1-10+deb12u12
+  From: cyrus-sasl2/libsasl2-modules@2.1.28+dfsg-10 > openssl/libssl3@3.0.9-1
+  From: ca-certificates@20230311 > openssl@3.0.9-1 > openssl/libssl3@3.0.9-1
+  From: curl@7.88.1-10+deb12u12 > curl/libcurl4@7.88.1-10+deb12u12 > openssl/libssl3@3.0.9-1
+  and 3 more...
+  Image layer: 'apt-get install -y curl'
+  Fixed in: 3.0.14-1~deb12u2
+
+✗ Low severity vulnerability found in openssl/libssl3
+  Description: CVE-2024-9143
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-OPENSSL-8229893
+  Introduced through: cyrus-sasl2/libsasl2-modules@2.1.28+dfsg-10, ca-certificates@20230311, curl@7.88.1-10+deb12u12
+  From: cyrus-sasl2/libsasl2-modules@2.1.28+dfsg-10 > openssl/libssl3@3.0.9-1
+  From: ca-certificates@20230311 > openssl@3.0.9-1 > openssl/libssl3@3.0.9-1
+  From: curl@7.88.1-10+deb12u12 > curl/libcurl4@7.88.1-10+deb12u12 > openssl/libssl3@3.0.9-1
+  and 3 more...
+  Image layer: 'apt-get install -y curl'
+  Fixed in: 3.0.15-1~deb12u1
+
+✗ Low severity vulnerability found in openssl/libssl3
+  Description: CVE-2024-13176
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-OPENSSL-8648323
+  Introduced through: cyrus-sasl2/libsasl2-modules@2.1.28+dfsg-10, ca-certificates@20230311, curl@7.88.1-10+deb12u12
+  From: cyrus-sasl2/libsasl2-modules@2.1.28+dfsg-10 > openssl/libssl3@3.0.9-1
+  From: ca-certificates@20230311 > openssl@3.0.9-1 > openssl/libssl3@3.0.9-1
+  From: curl@7.88.1-10+deb12u12 > curl/libcurl4@7.88.1-10+deb12u12 > openssl/libssl3@3.0.9-1
+  and 3 more...
+  Image layer: 'apt-get install -y curl'
+
+✗ Low severity vulnerability found in openldap/libldap-2.5-0
+  Description: Improper Initialization
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-OPENLDAP-1555631
+  Introduced through: curl@7.88.1-10+deb12u12, openldap/libldap-common@2.5.13+dfsg-5
+  From: curl@7.88.1-10+deb12u12 > curl/libcurl4@7.88.1-10+deb12u12 > openldap/libldap-2.5-0@2.5.13+dfsg-5
+  From: openldap/libldap-common@2.5.13+dfsg-5
+  Image layer: 'apt-get install -y curl'
+
+✗ Low severity vulnerability found in openldap/libldap-2.5-0
+  Description: Out-of-Bounds
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-OPENLDAP-1555724
+  Introduced through: curl@7.88.1-10+deb12u12, openldap/libldap-common@2.5.13+dfsg-5
+  From: curl@7.88.1-10+deb12u12 > curl/libcurl4@7.88.1-10+deb12u12 > openldap/libldap-2.5-0@2.5.13+dfsg-5
+  From: openldap/libldap-common@2.5.13+dfsg-5
+  Image layer: 'apt-get install -y curl'
+
+✗ Low severity vulnerability found in openldap/libldap-2.5-0
+  Description: Improper Certificate Validation
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-OPENLDAP-1555918
+  Introduced through: curl@7.88.1-10+deb12u12, openldap/libldap-common@2.5.13+dfsg-5
+  From: curl@7.88.1-10+deb12u12 > curl/libcurl4@7.88.1-10+deb12u12 > openldap/libldap-2.5-0@2.5.13+dfsg-5
+  From: openldap/libldap-common@2.5.13+dfsg-5
+  Image layer: 'apt-get install -y curl'
+
+✗ Low severity vulnerability found in openldap/libldap-2.5-0
+  Description: Cryptographic Issues
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-OPENLDAP-1555941
+  Introduced through: curl@7.88.1-10+deb12u12, openldap/libldap-common@2.5.13+dfsg-5
+  From: curl@7.88.1-10+deb12u12 > curl/libcurl4@7.88.1-10+deb12u12 > openldap/libldap-2.5-0@2.5.13+dfsg-5
+  From: openldap/libldap-common@2.5.13+dfsg-5
+  Image layer: 'apt-get install -y curl'
+
+✗ Low severity vulnerability found in openldap/libldap-2.5-0
+  Description: NULL Pointer Dereference
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-OPENLDAP-5660620
+  Introduced through: curl@7.88.1-10+deb12u12, openldap/libldap-common@2.5.13+dfsg-5
+  From: curl@7.88.1-10+deb12u12 > curl/libcurl4@7.88.1-10+deb12u12 > openldap/libldap-2.5-0@2.5.13+dfsg-5
+  From: openldap/libldap-common@2.5.13+dfsg-5
+  Image layer: 'apt-get install -y curl'
+
+✗ Low severity vulnerability found in ncurses/libtinfo6
+  Description: CVE-2023-50495
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-NCURSES-6123823
+  Introduced through: ncurses/libtinfo6@6.4-4, bash/bash@5.2.15-2+b2, ncurses/ncurses-bin@6.4-4, util-linux/util-linux@2.38.1-5+b1, ncurses/ncurses-base@6.4-4
+  From: ncurses/libtinfo6@6.4-4
+  From: bash/bash@5.2.15-2+b2 > ncurses/libtinfo6@6.4-4
+  From: ncurses/ncurses-bin@6.4-4 > ncurses/libtinfo6@6.4-4
+  and 3 more...
+  Image layer: 'apt-get install -y curl'
+
+✗ Low severity vulnerability found in libgcrypt20
+  Description: Use of a Broken or Risky Cryptographic Algorithm
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-LIBGCRYPT20-1550206
+  Introduced through: libgcrypt20@1.10.1-3, apt@2.6.1
+  From: libgcrypt20@1.10.1-3
+  From: apt@2.6.1 > apt/libapt-pkg6.0@2.6.1 > libgcrypt20@1.10.1-3
+  From: apt@2.6.1 > gnupg2/gpgv@2.2.40-1.1 > libgcrypt20@1.10.1-3
+  and 1 more...
+  Image layer: Introduced by your base image (openjdk:21-jdk-slim)
+
+✗ Low severity vulnerability found in libgcrypt20
+  Description: Information Exposure
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-LIBGCRYPT20-6405981
+  Introduced through: libgcrypt20@1.10.1-3, apt@2.6.1
+  From: libgcrypt20@1.10.1-3
+  From: apt@2.6.1 > apt/libapt-pkg6.0@2.6.1 > libgcrypt20@1.10.1-3
+  From: apt@2.6.1 > gnupg2/gpgv@2.2.40-1.1 > libgcrypt20@1.10.1-3
+  and 1 more...
+  Image layer: Introduced by your base image (openjdk:21-jdk-slim)
+
+✗ Low severity vulnerability found in libcap2
+  Description: CVE-2025-1390
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-LIBCAP2-8732577
+  Introduced through: libcap2@1:2.66-4, apt@2.6.1
+  From: libcap2@1:2.66-4
+  From: apt@2.6.1 > apt/libapt-pkg6.0@2.6.1 > systemd/libsystemd0@252.12-1~deb12u1 > libcap2@1:2.66-4
+  Image layer: Introduced by your base image (openjdk:21-jdk-slim)
+
+✗ Low severity vulnerability found in krb5/libkrb5support0
+  Description: Integer Overflow or Wraparound
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-KRB5-1549480
+  Introduced through: curl@7.88.1-10+deb12u12, krb5/krb5-locales@1.20.1-2+deb12u2
+  From: curl@7.88.1-10+deb12u12 > curl/libcurl4@7.88.1-10+deb12u12 > krb5/libgssapi-krb5-2@1.20.1-2+deb12u2 > krb5/libkrb5support0@1.20.1-2+deb12u2
+  From: curl@7.88.1-10+deb12u12 > curl/libcurl4@7.88.1-10+deb12u12 > krb5/libgssapi-krb5-2@1.20.1-2+deb12u2 > krb5/libk5crypto3@1.20.1-2+deb12u2 > krb5/libkrb5support0@1.20.1-2+deb12u2
+  From: curl@7.88.1-10+deb12u12 > curl/libcurl4@7.88.1-10+deb12u12 > krb5/libgssapi-krb5-2@1.20.1-2+deb12u2 > krb5/libkrb5-3@1.20.1-2+deb12u2 > krb5/libkrb5support0@1.20.1-2+deb12u2
+  and 5 more...
+  Image layer: 'apt-get install -y curl'
+
+✗ Low severity vulnerability found in krb5/libkrb5support0
+  Description: CVE-2024-26461
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-KRB5-6277411
+  Introduced through: curl@7.88.1-10+deb12u12, krb5/krb5-locales@1.20.1-2+deb12u2
+  From: curl@7.88.1-10+deb12u12 > curl/libcurl4@7.88.1-10+deb12u12 > krb5/libgssapi-krb5-2@1.20.1-2+deb12u2 > krb5/libkrb5support0@1.20.1-2+deb12u2
+  From: curl@7.88.1-10+deb12u12 > curl/libcurl4@7.88.1-10+deb12u12 > krb5/libgssapi-krb5-2@1.20.1-2+deb12u2 > krb5/libk5crypto3@1.20.1-2+deb12u2 > krb5/libkrb5support0@1.20.1-2+deb12u2
+  From: curl@7.88.1-10+deb12u12 > curl/libcurl4@7.88.1-10+deb12u12 > krb5/libgssapi-krb5-2@1.20.1-2+deb12u2 > krb5/libkrb5-3@1.20.1-2+deb12u2 > krb5/libkrb5support0@1.20.1-2+deb12u2
+  and 5 more...
+  Image layer: 'apt-get install -y curl'
+
+✗ Low severity vulnerability found in krb5/libkrb5support0
+  Description: CVE-2024-26458
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-KRB5-6277412
+  Introduced through: curl@7.88.1-10+deb12u12, krb5/krb5-locales@1.20.1-2+deb12u2
+  From: curl@7.88.1-10+deb12u12 > curl/libcurl4@7.88.1-10+deb12u12 > krb5/libgssapi-krb5-2@1.20.1-2+deb12u2 > krb5/libkrb5support0@1.20.1-2+deb12u2
+  From: curl@7.88.1-10+deb12u12 > curl/libcurl4@7.88.1-10+deb12u12 > krb5/libgssapi-krb5-2@1.20.1-2+deb12u2 > krb5/libk5crypto3@1.20.1-2+deb12u2 > krb5/libkrb5support0@1.20.1-2+deb12u2
+  From: curl@7.88.1-10+deb12u12 > curl/libcurl4@7.88.1-10+deb12u12 > krb5/libgssapi-krb5-2@1.20.1-2+deb12u2 > krb5/libkrb5-3@1.20.1-2+deb12u2 > krb5/libkrb5support0@1.20.1-2+deb12u2
+  and 5 more...
+  Image layer: 'apt-get install -y curl'
+
+✗ Low severity vulnerability found in krb5/libkrb5support0
+  Description: Memory Leak
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-KRB5-6277421
+  Introduced through: curl@7.88.1-10+deb12u12, krb5/krb5-locales@1.20.1-2+deb12u2
+  From: curl@7.88.1-10+deb12u12 > curl/libcurl4@7.88.1-10+deb12u12 > krb5/libgssapi-krb5-2@1.20.1-2+deb12u2 > krb5/libkrb5support0@1.20.1-2+deb12u2
+  From: curl@7.88.1-10+deb12u12 > curl/libcurl4@7.88.1-10+deb12u12 > krb5/libgssapi-krb5-2@1.20.1-2+deb12u2 > krb5/libk5crypto3@1.20.1-2+deb12u2 > krb5/libkrb5support0@1.20.1-2+deb12u2
+  From: curl@7.88.1-10+deb12u12 > curl/libcurl4@7.88.1-10+deb12u12 > krb5/libgssapi-krb5-2@1.20.1-2+deb12u2 > krb5/libkrb5-3@1.20.1-2+deb12u2 > krb5/libkrb5support0@1.20.1-2+deb12u2
+  and 5 more...
+  Image layer: 'apt-get install -y curl'
+
+✗ Low severity vulnerability found in krb5/libkrb5support0
+  Description: CVE-2025-24528
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-KRB5-8679228
+  Introduced through: curl@7.88.1-10+deb12u12, krb5/krb5-locales@1.20.1-2+deb12u2
+  From: curl@7.88.1-10+deb12u12 > curl/libcurl4@7.88.1-10+deb12u12 > krb5/libgssapi-krb5-2@1.20.1-2+deb12u2 > krb5/libkrb5support0@1.20.1-2+deb12u2
+  From: curl@7.88.1-10+deb12u12 > curl/libcurl4@7.88.1-10+deb12u12 > krb5/libgssapi-krb5-2@1.20.1-2+deb12u2 > krb5/libk5crypto3@1.20.1-2+deb12u2 > krb5/libkrb5support0@1.20.1-2+deb12u2
+  From: curl@7.88.1-10+deb12u12 > curl/libcurl4@7.88.1-10+deb12u12 > krb5/libgssapi-krb5-2@1.20.1-2+deb12u2 > krb5/libkrb5-3@1.20.1-2+deb12u2 > krb5/libkrb5support0@1.20.1-2+deb12u2
+  and 5 more...
+  Image layer: 'apt-get install -y curl'
+
+✗ Low severity vulnerability found in krb5/libkrb5support0
+  Description: Reversible One-Way Hash
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-KRB5-9712315
+  Introduced through: curl@7.88.1-10+deb12u12, krb5/krb5-locales@1.20.1-2+deb12u2
+  From: curl@7.88.1-10+deb12u12 > curl/libcurl4@7.88.1-10+deb12u12 > krb5/libgssapi-krb5-2@1.20.1-2+deb12u2 > krb5/libkrb5support0@1.20.1-2+deb12u2
+  From: curl@7.88.1-10+deb12u12 > curl/libcurl4@7.88.1-10+deb12u12 > krb5/libgssapi-krb5-2@1.20.1-2+deb12u2 > krb5/libk5crypto3@1.20.1-2+deb12u2 > krb5/libkrb5support0@1.20.1-2+deb12u2
+  From: curl@7.88.1-10+deb12u12 > curl/libcurl4@7.88.1-10+deb12u12 > krb5/libgssapi-krb5-2@1.20.1-2+deb12u2 > krb5/libkrb5-3@1.20.1-2+deb12u2 > krb5/libkrb5support0@1.20.1-2+deb12u2
+  and 5 more...
+  Image layer: 'apt-get install -y curl'
+
+✗ Low severity vulnerability found in gnutls28/libgnutls30
+  Description: Improper Input Validation
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-GNUTLS28-1547121
+  Introduced through: apt@2.6.1, curl@7.88.1-10+deb12u12
+  From: apt@2.6.1 > gnutls28/libgnutls30@3.7.9-2
+  From: curl@7.88.1-10+deb12u12 > curl/libcurl4@7.88.1-10+deb12u12 > rtmpdump/librtmp1@2.4+20151223.gitfa8646d.1-2+b2 > gnutls28/libgnutls30@3.7.9-2
+  From: curl@7.88.1-10+deb12u12 > curl/libcurl4@7.88.1-10+deb12u12 > openldap/libldap-2.5-0@2.5.13+dfsg-5 > gnutls28/libgnutls30@3.7.9-2
+  Image layer: 'apt-get install -y curl'
+
+✗ Low severity vulnerability found in gnutls28/libgnutls30
+  Description: Uncaught Exception
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-GNUTLS28-6474581
+  Introduced through: apt@2.6.1, curl@7.88.1-10+deb12u12
+  From: apt@2.6.1 > gnutls28/libgnutls30@3.7.9-2
+  From: curl@7.88.1-10+deb12u12 > curl/libcurl4@7.88.1-10+deb12u12 > rtmpdump/librtmp1@2.4+20151223.gitfa8646d.1-2+b2 > gnutls28/libgnutls30@3.7.9-2
+  From: curl@7.88.1-10+deb12u12 > curl/libcurl4@7.88.1-10+deb12u12 > openldap/libldap-2.5-0@2.5.13+dfsg-5 > gnutls28/libgnutls30@3.7.9-2
+  Image layer: 'apt-get install -y curl'
+  Fixed in: 3.7.9-2+deb12u3
+
+✗ Low severity vulnerability found in gnutls28/libgnutls30
+  Description: Use of a Broken or Risky Cryptographic Algorithm
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-GNUTLS28-6474586
+  Introduced through: apt@2.6.1, curl@7.88.1-10+deb12u12
+  From: apt@2.6.1 > gnutls28/libgnutls30@3.7.9-2
+  From: curl@7.88.1-10+deb12u12 > curl/libcurl4@7.88.1-10+deb12u12 > rtmpdump/librtmp1@2.4+20151223.gitfa8646d.1-2+b2 > gnutls28/libgnutls30@3.7.9-2
+  From: curl@7.88.1-10+deb12u12 > curl/libcurl4@7.88.1-10+deb12u12 > openldap/libldap-2.5-0@2.5.13+dfsg-5 > gnutls28/libgnutls30@3.7.9-2
+  Image layer: 'apt-get install -y curl'
+  Fixed in: 3.7.9-2+deb12u3
+
+✗ Low severity vulnerability found in gnupg2/gpgv
+  Description: Out-of-bounds Write
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-GNUPG2-3330747
+  Introduced through: gnupg2/gpgv@2.2.40-1.1, apt@2.6.1
+  From: gnupg2/gpgv@2.2.40-1.1
+  From: apt@2.6.1 > gnupg2/gpgv@2.2.40-1.1
+  Image layer: Introduced by your base image (openjdk:21-jdk-slim)
+
+✗ Low severity vulnerability found in gnupg2/gpgv
+  Description: CVE-2025-30258
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-GNUPG2-9486681
+  Introduced through: gnupg2/gpgv@2.2.40-1.1, apt@2.6.1
+  From: gnupg2/gpgv@2.2.40-1.1
+  From: apt@2.6.1 > gnupg2/gpgv@2.2.40-1.1
+  Image layer: Introduced by your base image (openjdk:21-jdk-slim)
+
+✗ Low severity vulnerability found in glibc/libc-bin
+  Description: Information Exposure
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-GLIBC-1546991
+  Introduced through: glibc/libc-bin@2.36-9+deb12u1, glibc/libc6@2.36-9+deb12u1
+  From: glibc/libc-bin@2.36-9+deb12u1
+  From: glibc/libc6@2.36-9+deb12u1
+  Image layer: Introduced by your base image (openjdk:21-jdk-slim)
+
+✗ Low severity vulnerability found in glibc/libc-bin
+  Description: Uncontrolled Recursion
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-GLIBC-1547039
+  Introduced through: glibc/libc-bin@2.36-9+deb12u1, glibc/libc6@2.36-9+deb12u1
+  From: glibc/libc-bin@2.36-9+deb12u1
+  From: glibc/libc6@2.36-9+deb12u1
+  Image layer: Introduced by your base image (openjdk:21-jdk-slim)
+
+✗ Low severity vulnerability found in glibc/libc-bin
+  Description: Uncontrolled Recursion
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-GLIBC-1547069
+  Introduced through: glibc/libc-bin@2.36-9+deb12u1, glibc/libc6@2.36-9+deb12u1
+  From: glibc/libc-bin@2.36-9+deb12u1
+  From: glibc/libc6@2.36-9+deb12u1
+  Image layer: Introduced by your base image (openjdk:21-jdk-slim)
+
+✗ Low severity vulnerability found in glibc/libc-bin
+  Description: Use of Insufficiently Random Values
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-GLIBC-1547135
+  Introduced through: glibc/libc-bin@2.36-9+deb12u1, glibc/libc6@2.36-9+deb12u1
+  From: glibc/libc-bin@2.36-9+deb12u1
+  From: glibc/libc6@2.36-9+deb12u1
+  Image layer: Introduced by your base image (openjdk:21-jdk-slim)
+
+✗ Low severity vulnerability found in glibc/libc-bin
+  Description: Out-of-Bounds
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-GLIBC-1547196
+  Introduced through: glibc/libc-bin@2.36-9+deb12u1, glibc/libc6@2.36-9+deb12u1
+  From: glibc/libc-bin@2.36-9+deb12u1
+  From: glibc/libc6@2.36-9+deb12u1
+  Image layer: Introduced by your base image (openjdk:21-jdk-slim)
+
+✗ Low severity vulnerability found in glibc/libc-bin
+  Description: Resource Management Errors
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-GLIBC-1547293
+  Introduced through: glibc/libc-bin@2.36-9+deb12u1, glibc/libc6@2.36-9+deb12u1
+  From: glibc/libc-bin@2.36-9+deb12u1
+  From: glibc/libc6@2.36-9+deb12u1
+  Image layer: Introduced by your base image (openjdk:21-jdk-slim)
+
+✗ Low severity vulnerability found in glibc/libc-bin
+  Description: CVE-2019-1010023
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-GLIBC-1547373
+  Introduced through: glibc/libc-bin@2.36-9+deb12u1, glibc/libc6@2.36-9+deb12u1
+  From: glibc/libc-bin@2.36-9+deb12u1
+  From: glibc/libc6@2.36-9+deb12u1
+  Image layer: Introduced by your base image (openjdk:21-jdk-slim)
+
+✗ Low severity vulnerability found in glibc/libc-bin
+  Description: CVE-2024-2961
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-GLIBC-6617103
+  Introduced through: glibc/libc-bin@2.36-9+deb12u1, glibc/libc6@2.36-9+deb12u1
+  From: glibc/libc-bin@2.36-9+deb12u1
+  From: glibc/libc6@2.36-9+deb12u1
+  Image layer: Introduced by your base image (openjdk:21-jdk-slim)
+  Fixed in: 2.36-9+deb12u6
+
+✗ Low severity vulnerability found in glibc/libc-bin
+  Description: CVE-2024-33601
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-GLIBC-6673964
+  Introduced through: glibc/libc-bin@2.36-9+deb12u1, glibc/libc6@2.36-9+deb12u1
+  From: glibc/libc-bin@2.36-9+deb12u1
+  From: glibc/libc6@2.36-9+deb12u1
+  Image layer: Introduced by your base image (openjdk:21-jdk-slim)
+  Fixed in: 2.36-9+deb12u7
+
+✗ Low severity vulnerability found in glibc/libc-bin
+  Description: CVE-2024-33600
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-GLIBC-6673969
+  Introduced through: glibc/libc-bin@2.36-9+deb12u1, glibc/libc6@2.36-9+deb12u1
+  From: glibc/libc-bin@2.36-9+deb12u1
+  From: glibc/libc6@2.36-9+deb12u1
+  Image layer: Introduced by your base image (openjdk:21-jdk-slim)
+  Fixed in: 2.36-9+deb12u7
+
+✗ Low severity vulnerability found in glibc/libc-bin
+  Description: CVE-2024-33602
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-GLIBC-6673972
+  Introduced through: glibc/libc-bin@2.36-9+deb12u1, glibc/libc6@2.36-9+deb12u1
+  From: glibc/libc-bin@2.36-9+deb12u1
+  From: glibc/libc6@2.36-9+deb12u1
+  Image layer: Introduced by your base image (openjdk:21-jdk-slim)
+  Fixed in: 2.36-9+deb12u7
+
+✗ Low severity vulnerability found in glibc/libc-bin
+  Description: CVE-2024-33599
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-GLIBC-6673974
+  Introduced through: glibc/libc-bin@2.36-9+deb12u1, glibc/libc6@2.36-9+deb12u1
+  From: glibc/libc-bin@2.36-9+deb12u1
+  From: glibc/libc6@2.36-9+deb12u1
+  Image layer: Introduced by your base image (openjdk:21-jdk-slim)
+  Fixed in: 2.36-9+deb12u7
+
+✗ Low severity vulnerability found in glibc/libc-bin
+  Description: CVE-2025-0395
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-GLIBC-8658672
+  Introduced through: glibc/libc-bin@2.36-9+deb12u1, glibc/libc6@2.36-9+deb12u1
+  From: glibc/libc-bin@2.36-9+deb12u1
+  From: glibc/libc6@2.36-9+deb12u1
+  Image layer: Introduced by your base image (openjdk:21-jdk-slim)
+  Fixed in: 2.36-9+deb12u10
+
+✗ Low severity vulnerability found in gcc-12/libstdc++6
+  Description: Uncontrolled Recursion
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-GCC12-2606941
+  Introduced through: gcc-12/libstdc++6@12.2.0-14, apt@2.6.1, gcc-12/gcc-12-base@12.2.0-14, gcc-12/libgcc-s1@12.2.0-14
+  From: gcc-12/libstdc++6@12.2.0-14
+  From: apt@2.6.1 > gcc-12/libstdc++6@12.2.0-14
+  From: apt@2.6.1 > apt/libapt-pkg6.0@2.6.1 > gcc-12/libstdc++6@12.2.0-14
+  and 2 more...
+  Image layer: Introduced by your base image (openjdk:21-jdk-slim)
+
+✗ Low severity vulnerability found in gcc-12/libstdc++6
+  Description: CVE-2023-4039
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-GCC12-5901316
+  Introduced through: gcc-12/libstdc++6@12.2.0-14, apt@2.6.1, gcc-12/gcc-12-base@12.2.0-14, gcc-12/libgcc-s1@12.2.0-14
+  From: gcc-12/libstdc++6@12.2.0-14
+  From: apt@2.6.1 > gcc-12/libstdc++6@12.2.0-14
+  From: apt@2.6.1 > apt/libapt-pkg6.0@2.6.1 > gcc-12/libstdc++6@12.2.0-14
+  and 2 more...
+  Image layer: Introduced by your base image (openjdk:21-jdk-slim)
+
+✗ Low severity vulnerability found in curl/libcurl4
+  Description: CVE-2024-2379
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-CURL-6501697
+  Introduced through: curl@7.88.1-10+deb12u12
+  From: curl@7.88.1-10+deb12u12 > curl/libcurl4@7.88.1-10+deb12u12
+  From: curl@7.88.1-10+deb12u12
+  Image layer: 'apt-get install -y curl'
+
+✗ Low severity vulnerability found in curl/libcurl4
+  Description: Buffer Overflow
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-CURL-8688448
+  Introduced through: curl@7.88.1-10+deb12u12
+  From: curl@7.88.1-10+deb12u12 > curl/libcurl4@7.88.1-10+deb12u12
+  From: curl@7.88.1-10+deb12u12
+  Image layer: 'apt-get install -y curl'
+
+✗ Low severity vulnerability found in coreutils
+  Description: Improper Input Validation
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-COREUTILS-1543939
+  Introduced through: coreutils@9.1-1
+  From: coreutils@9.1-1
+  Image layer: Introduced by your base image (openjdk:21-jdk-slim)
+
+✗ Low severity vulnerability found in coreutils
+  Description: Race Condition
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-COREUTILS-1543947
+  Introduced through: coreutils@9.1-1
+  From: coreutils@9.1-1
+  Image layer: Introduced by your base image (openjdk:21-jdk-slim)
+
+✗ Low severity vulnerability found in apt/libapt-pkg6.0
+  Description: Improper Verification of Cryptographic Signature
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-APT-1541449
+  Introduced through: apt/libapt-pkg6.0@2.6.1, apt@2.6.1
+  From: apt/libapt-pkg6.0@2.6.1
+  From: apt@2.6.1 > apt/libapt-pkg6.0@2.6.1
+  From: apt@2.6.1
+  Image layer: Introduced by your base image (openjdk:21-jdk-slim)
+
+✗ Medium severity vulnerability found in tar
+  Description: Out-of-bounds Read
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-TAR-3253526
+  Introduced through: tar@1.34+dfsg-1.2, dash@0.5.12-2
+  From: tar@1.34+dfsg-1.2
+  From: dash@0.5.12-2 > dpkg@1.21.22 > tar@1.34+dfsg-1.2
+  Image layer: Introduced by your base image (openjdk:21-jdk-slim)
+  Fixed in: 1.34+dfsg-1.2+deb12u1
+
+✗ Medium severity vulnerability found in systemd/libsystemd0
+  Description: CVE-2023-7008
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-SYSTEMD-6137714
+  Introduced through: systemd/libsystemd0@252.12-1~deb12u1, apt@2.6.1, util-linux/bsdutils@1:2.38.1-5+b1, util-linux/util-linux@2.38.1-5+b1, systemd/libudev1@252.12-1~deb12u1
+  From: systemd/libsystemd0@252.12-1~deb12u1
+  From: apt@2.6.1 > systemd/libsystemd0@252.12-1~deb12u1
+  From: util-linux/bsdutils@1:2.38.1-5+b1 > systemd/libsystemd0@252.12-1~deb12u1
+  and 5 more...
+  Image layer: 'apt-get install -y curl'
+  Fixed in: 252.21-1~deb12u1
+
+✗ Medium severity vulnerability found in openssl/libssl3
+  Description: Improper Authentication
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-OPENSSL-5776700
+  Introduced through: cyrus-sasl2/libsasl2-modules@2.1.28+dfsg-10, ca-certificates@20230311, curl@7.88.1-10+deb12u12
+  From: cyrus-sasl2/libsasl2-modules@2.1.28+dfsg-10 > openssl/libssl3@3.0.9-1
+  From: ca-certificates@20230311 > openssl@3.0.9-1 > openssl/libssl3@3.0.9-1
+  From: curl@7.88.1-10+deb12u12 > curl/libcurl4@7.88.1-10+deb12u12 > openssl/libssl3@3.0.9-1
+  and 3 more...
+  Image layer: 'apt-get install -y curl'
+  Fixed in: 3.0.10-1~deb12u1
+
+✗ Medium severity vulnerability found in openssl/libssl3
+  Description: Inefficient Regular Expression Complexity
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-OPENSSL-5788322
+  Introduced through: cyrus-sasl2/libsasl2-modules@2.1.28+dfsg-10, ca-certificates@20230311, curl@7.88.1-10+deb12u12
+  From: cyrus-sasl2/libsasl2-modules@2.1.28+dfsg-10 > openssl/libssl3@3.0.9-1
+  From: ca-certificates@20230311 > openssl@3.0.9-1 > openssl/libssl3@3.0.9-1
+  From: curl@7.88.1-10+deb12u12 > curl/libcurl4@7.88.1-10+deb12u12 > openssl/libssl3@3.0.9-1
+  and 3 more...
+  Image layer: 'apt-get install -y curl'
+  Fixed in: 3.0.10-1~deb12u1
+
+✗ Medium severity vulnerability found in openssl/libssl3
+  Description: Excessive Iteration
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-OPENSSL-5812633
+  Introduced through: cyrus-sasl2/libsasl2-modules@2.1.28+dfsg-10, ca-certificates@20230311, curl@7.88.1-10+deb12u12
+  From: cyrus-sasl2/libsasl2-modules@2.1.28+dfsg-10 > openssl/libssl3@3.0.9-1
+  From: ca-certificates@20230311 > openssl@3.0.9-1 > openssl/libssl3@3.0.9-1
+  From: curl@7.88.1-10+deb12u12 > curl/libcurl4@7.88.1-10+deb12u12 > openssl/libssl3@3.0.9-1
+  and 3 more...
+  Image layer: 'apt-get install -y curl'
+  Fixed in: 3.0.10-1~deb12u1
+
+✗ Medium severity vulnerability found in openssl/libssl3
+  Description: Improper Check for Unusual or Exceptional Conditions
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-OPENSSL-6048820
+  Introduced through: cyrus-sasl2/libsasl2-modules@2.1.28+dfsg-10, ca-certificates@20230311, curl@7.88.1-10+deb12u12
+  From: cyrus-sasl2/libsasl2-modules@2.1.28+dfsg-10 > openssl/libssl3@3.0.9-1
+  From: ca-certificates@20230311 > openssl@3.0.9-1 > openssl/libssl3@3.0.9-1
+  From: curl@7.88.1-10+deb12u12 > curl/libcurl4@7.88.1-10+deb12u12 > openssl/libssl3@3.0.9-1
+  and 3 more...
+  Image layer: 'apt-get install -y curl'
+  Fixed in: 3.0.13-1~deb12u1
+
+✗ Medium severity vulnerability found in openssl/libssl3
+  Description: Out-of-bounds Write
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-OPENSSL-6148845
+  Introduced through: cyrus-sasl2/libsasl2-modules@2.1.28+dfsg-10, ca-certificates@20230311, curl@7.88.1-10+deb12u12
+  From: cyrus-sasl2/libsasl2-modules@2.1.28+dfsg-10 > openssl/libssl3@3.0.9-1
+  From: ca-certificates@20230311 > openssl@3.0.9-1 > openssl/libssl3@3.0.9-1
+  From: curl@7.88.1-10+deb12u12 > curl/libcurl4@7.88.1-10+deb12u12 > openssl/libssl3@3.0.9-1
+  and 3 more...
+  Image layer: 'apt-get install -y curl'
+  Fixed in: 3.0.13-1~deb12u1
+
+✗ Medium severity vulnerability found in openssl/libssl3
+  Description: CVE-2024-0727
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-OPENSSL-6190223
+  Introduced through: cyrus-sasl2/libsasl2-modules@2.1.28+dfsg-10, ca-certificates@20230311, curl@7.88.1-10+deb12u12
+  From: cyrus-sasl2/libsasl2-modules@2.1.28+dfsg-10 > openssl/libssl3@3.0.9-1
+  From: ca-certificates@20230311 > openssl@3.0.9-1 > openssl/libssl3@3.0.9-1
+  From: curl@7.88.1-10+deb12u12 > curl/libcurl4@7.88.1-10+deb12u12 > openssl/libssl3@3.0.9-1
+  and 3 more...
+  Image layer: 'apt-get install -y curl'
+  Fixed in: 3.0.13-1~deb12u1
+
+✗ Medium severity vulnerability found in libtasn1-6
+  Description: Algorithmic Complexity
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-LIBTASN16-8689970
+  Introduced through: p11-kit@0.24.1-2, curl@7.88.1-10+deb12u12
+  From: p11-kit@0.24.1-2 > libtasn1-6@4.19.0-2
+  From: p11-kit@0.24.1-2 > p11-kit/p11-kit-modules@0.24.1-2 > libtasn1-6@4.19.0-2
+  From: curl@7.88.1-10+deb12u12 > curl/libcurl4@7.88.1-10+deb12u12 > openldap/libldap-2.5-0@2.5.13+dfsg-5 > gnutls28/libgnutls30@3.7.9-2 > libtasn1-6@4.19.0-2
+  Image layer: 'apt-get install -y curl'
+  Fixed in: 4.19.0-2+deb12u1
+
+✗ Medium severity vulnerability found in gnutls28/libgnutls30
+  Description: Information Exposure
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-GNUTLS28-6062100
+  Introduced through: apt@2.6.1, curl@7.88.1-10+deb12u12
+  From: apt@2.6.1 > gnutls28/libgnutls30@3.7.9-2
+  From: curl@7.88.1-10+deb12u12 > curl/libcurl4@7.88.1-10+deb12u12 > rtmpdump/librtmp1@2.4+20151223.gitfa8646d.1-2+b2 > gnutls28/libgnutls30@3.7.9-2
+  From: curl@7.88.1-10+deb12u12 > curl/libcurl4@7.88.1-10+deb12u12 > openldap/libldap-2.5-0@2.5.13+dfsg-5 > gnutls28/libgnutls30@3.7.9-2
+  Image layer: 'apt-get install -y curl'
+  Fixed in: 3.7.9-2+deb12u1
+
+✗ Medium severity vulnerability found in gnutls28/libgnutls30
+  Description: Algorithmic Complexity
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-GNUTLS28-8705121
+  Introduced through: apt@2.6.1, curl@7.88.1-10+deb12u12
+  From: apt@2.6.1 > gnutls28/libgnutls30@3.7.9-2
+  From: curl@7.88.1-10+deb12u12 > curl/libcurl4@7.88.1-10+deb12u12 > rtmpdump/librtmp1@2.4+20151223.gitfa8646d.1-2+b2 > gnutls28/libgnutls30@3.7.9-2
+  From: curl@7.88.1-10+deb12u12 > curl/libcurl4@7.88.1-10+deb12u12 > openldap/libldap-2.5-0@2.5.13+dfsg-5 > gnutls28/libgnutls30@3.7.9-2
+  Image layer: 'apt-get install -y curl'
+  Fixed in: 3.7.9-2+deb12u4
+
+✗ Medium severity vulnerability found in glibc/libc-bin
+  Description: Use After Free
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-GLIBC-5894114
+  Introduced through: glibc/libc-bin@2.36-9+deb12u1, glibc/libc6@2.36-9+deb12u1
+  From: glibc/libc-bin@2.36-9+deb12u1
+  From: glibc/libc6@2.36-9+deb12u1
+  Image layer: Introduced by your base image (openjdk:21-jdk-slim)
+  Fixed in: 2.36-9+deb12u3
+
+✗ Medium severity vulnerability found in glibc/libc-bin
+  Description: Out-of-bounds Read
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-GLIBC-5894115
+  Introduced through: glibc/libc-bin@2.36-9+deb12u1, glibc/libc6@2.36-9+deb12u1
+  From: glibc/libc-bin@2.36-9+deb12u1
+  From: glibc/libc6@2.36-9+deb12u1
+  Image layer: Introduced by your base image (openjdk:21-jdk-slim)
+  Fixed in: 2.36-9+deb12u3
+
+✗ Medium severity vulnerability found in glibc/libc-bin
+  Description: Incorrect Calculation of Buffer Size
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-GLIBC-6210099
+  Introduced through: glibc/libc-bin@2.36-9+deb12u1, glibc/libc6@2.36-9+deb12u1
+  From: glibc/libc-bin@2.36-9+deb12u1
+  From: glibc/libc6@2.36-9+deb12u1
+  Image layer: Introduced by your base image (openjdk:21-jdk-slim)
+  Fixed in: 2.36-9+deb12u4
+
+✗ High severity vulnerability found in systemd/libsystemd0
+  Description: Allocation of Resources Without Limits or Throttling
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-SYSTEMD-6277507
+  Introduced through: systemd/libsystemd0@252.12-1~deb12u1, apt@2.6.1, util-linux/bsdutils@1:2.38.1-5+b1, util-linux/util-linux@2.38.1-5+b1, systemd/libudev1@252.12-1~deb12u1
+  From: systemd/libsystemd0@252.12-1~deb12u1
+  From: apt@2.6.1 > systemd/libsystemd0@252.12-1~deb12u1
+  From: util-linux/bsdutils@1:2.38.1-5+b1 > systemd/libsystemd0@252.12-1~deb12u1
+  and 5 more...
+  Image layer: 'apt-get install -y curl'
+  Fixed in: 252.23-1~deb12u1
+
+✗ High severity vulnerability found in perl/perl-base
+  Description: Out-of-bounds Write
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-PERL-6085273
+  Introduced through: perl/perl-base@5.36.0-7
+  From: perl/perl-base@5.36.0-7
+  Image layer: Introduced by your base image (openjdk:21-jdk-slim)
+  Fixed in: 5.36.0-7+deb12u1
+
+✗ High severity vulnerability found in openssl/libssl3
+  Description: CVE-2023-5363
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-OPENSSL-6032384
+  Introduced through: cyrus-sasl2/libsasl2-modules@2.1.28+dfsg-10, ca-certificates@20230311, curl@7.88.1-10+deb12u12
+  From: cyrus-sasl2/libsasl2-modules@2.1.28+dfsg-10 > openssl/libssl3@3.0.9-1
+  From: ca-certificates@20230311 > openssl@3.0.9-1 > openssl/libssl3@3.0.9-1
+  From: curl@7.88.1-10+deb12u12 > curl/libcurl4@7.88.1-10+deb12u12 > openssl/libssl3@3.0.9-1
+  and 3 more...
+  Image layer: 'apt-get install -y curl'
+  Fixed in: 3.0.11-1~deb12u2
+
+✗ High severity vulnerability found in gnutls28/libgnutls30
+  Description: Improper Verification of Cryptographic Signature
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-GNUTLS28-6159410
+  Introduced through: apt@2.6.1, curl@7.88.1-10+deb12u12
+  From: apt@2.6.1 > gnutls28/libgnutls30@3.7.9-2
+  From: curl@7.88.1-10+deb12u12 > curl/libcurl4@7.88.1-10+deb12u12 > rtmpdump/librtmp1@2.4+20151223.gitfa8646d.1-2+b2 > gnutls28/libgnutls30@3.7.9-2
+  From: curl@7.88.1-10+deb12u12 > curl/libcurl4@7.88.1-10+deb12u12 > openldap/libldap-2.5-0@2.5.13+dfsg-5 > gnutls28/libgnutls30@3.7.9-2
+  Image layer: 'apt-get install -y curl'
+  Fixed in: 3.7.9-2+deb12u2
+
+✗ High severity vulnerability found in gnutls28/libgnutls30
+  Description: Information Exposure
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-GNUTLS28-6159418
+  Introduced through: apt@2.6.1, curl@7.88.1-10+deb12u12
+  From: apt@2.6.1 > gnutls28/libgnutls30@3.7.9-2
+  From: curl@7.88.1-10+deb12u12 > curl/libcurl4@7.88.1-10+deb12u12 > rtmpdump/librtmp1@2.4+20151223.gitfa8646d.1-2+b2 > gnutls28/libgnutls30@3.7.9-2
+  From: curl@7.88.1-10+deb12u12 > curl/libcurl4@7.88.1-10+deb12u12 > openldap/libldap-2.5-0@2.5.13+dfsg-5 > gnutls28/libgnutls30@3.7.9-2
+  Image layer: 'apt-get install -y curl'
+  Fixed in: 3.7.9-2+deb12u2
+
+✗ High severity vulnerability found in glibc/libc-bin
+  Description: Out-of-bounds Write
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-GLIBC-5927132
+  Introduced through: glibc/libc-bin@2.36-9+deb12u1, glibc/libc6@2.36-9+deb12u1
+  From: glibc/libc-bin@2.36-9+deb12u1
+  From: glibc/libc6@2.36-9+deb12u1
+  Image layer: Introduced by your base image (openjdk:21-jdk-slim)
+  Fixed in: 2.36-9+deb12u3
+
+✗ High severity vulnerability found in glibc/libc-bin
+  Description: Out-of-bounds Write
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-GLIBC-6210088
+  Introduced through: glibc/libc-bin@2.36-9+deb12u1, glibc/libc6@2.36-9+deb12u1
+  From: glibc/libc-bin@2.36-9+deb12u1
+  From: glibc/libc6@2.36-9+deb12u1
+  Image layer: Introduced by your base image (openjdk:21-jdk-slim)
+  Fixed in: 2.36-9+deb12u4
+
+✗ High severity vulnerability found in glibc/libc-bin
+  Description: Out-of-bounds Write
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-GLIBC-6210098
+  Introduced through: glibc/libc-bin@2.36-9+deb12u1, glibc/libc6@2.36-9+deb12u1
+  From: glibc/libc-bin@2.36-9+deb12u1
+  From: glibc/libc6@2.36-9+deb12u1
+  Image layer: Introduced by your base image (openjdk:21-jdk-slim)
+  Fixed in: 2.36-9+deb12u4
+
+✗ Critical severity vulnerability found in zlib/zlib1g
+  Description: Integer Overflow or Wraparound
+  Info: https://security.snyk.io/vuln/SNYK-DEBIAN12-ZLIB-6008963
+  Introduced through: curl@7.88.1-10+deb12u12, util-linux/util-linux@2.38.1-5+b1, apt@2.6.1, dash@0.5.12-2
+  From: curl@7.88.1-10+deb12u12 > zlib/zlib1g@1:1.2.13.dfsg-1
+  From: util-linux/util-linux@2.38.1-5+b1 > zlib/zlib1g@1:1.2.13.dfsg-1
+  From: apt@2.6.1 > apt/libapt-pkg6.0@2.6.1 > zlib/zlib1g@1:1.2.13.dfsg-1
+  and 5 more...
+  Image layer: 'apt-get install -y curl'
+
+
+
+Organization:      pradeep-snyk-demo
+Package manager:   deb
+Target file:       Dockerfile
+Project name:      docker-image|contactsapp
+Docker image:      contactsapp:1.0
+Platform:          linux/arm64
+Base image:        openjdk:21-jdk-slim
+Licenses:          enabled
+
+Tested 112 dependencies for known issues, found 91 issues.
+
+Base Image           Vulnerabilities  Severity
+openjdk:21-jdk-slim  78               1 critical, 8 high, 14 medium, 55 low
+
+Recommendations for base image upgrade:
+
+Major upgrades
+Base Image           Vulnerabilities  Severity
+openjdk:25-jdk-slim  36               1 critical, 0 high, 0 medium, 35 low
+
+
+Pro tip: use `--exclude-base-image-vulns` to exclude from display Docker base image vulnerabilities.
+
+Snyk found some vulnerabilities in your image applications (Snyk searches for these vulnerabilities by default). See https://snyk.co/app-vulns for more information.
+
+To remove these messages in the future, please run `snyk config set disableSuggestions=true`
+
+Learn more: https://docs.snyk.io/products/snyk-container/getting-around-the-snyk-container-ui/base-image-detection
+
+-------------------------------------------------------
+
+Testing contactsapp:1.0...
+
+Tested 74 dependencies for known issues, found 43 issues.
+
+⚠ Warning! Some dependencies in this project could not be identified.
+
+
+Issues to fix by upgrading:
+
+  Upgrade ch.qos.logback:logback-classic@1.4.11 to ch.qos.logback:logback-classic@1.5.13 to fix
+  ✗ Improper Neutralization of Special Elements [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-CHQOSLOGBACK-8539867] in ch.qos.logback:logback-classic@1.4.11
+    introduced by ch.qos.logback:logback-classic@1.4.11
+  ✗ Uncontrolled Resource Consumption ('Resource Exhaustion') [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-CHQOSLOGBACK-6097492] in ch.qos.logback:logback-classic@1.4.11
+    introduced by ch.qos.logback:logback-classic@1.4.11
+  ✗ Denial of Service (DoS) [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-CHQOSLOGBACK-6094942] in ch.qos.logback:logback-classic@1.4.11
+    introduced by ch.qos.logback:logback-classic@1.4.11
+
+  Upgrade ch.qos.logback:logback-core@1.4.11 to ch.qos.logback:logback-core@1.5.13 to fix
+  ✗ Improper Neutralization of Special Elements [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-CHQOSLOGBACK-8539866] in ch.qos.logback:logback-core@1.4.11
+    introduced by ch.qos.logback:logback-core@1.4.11
+  ✗ Uncontrolled Resource Consumption ('Resource Exhaustion') [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-CHQOSLOGBACK-6097493] in ch.qos.logback:logback-core@1.4.11
+    introduced by ch.qos.logback:logback-core@1.4.11
+  ✗ Denial of Service (DoS) [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-CHQOSLOGBACK-6094943] in ch.qos.logback:logback-core@1.4.11
+    introduced by ch.qos.logback:logback-core@1.4.11
+  ✗ Server-side Request Forgery (SSRF) [Critical Severity (originally Low)][https://security.snyk.io/vuln/SNYK-JAVA-CHQOSLOGBACK-8539865] in ch.qos.logback:logback-core@1.4.11
+    introduced by ch.qos.logback:logback-core@1.4.11
+
+  Upgrade com.h2database:h2@2.1.214 to com.h2database:h2@2.2.220 to fix
+  ✗ Information Exposure [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-COMH2DATABASE-3146851] in com.h2database:h2@2.1.214
+    introduced by com.h2database:h2@2.1.214
+
+  Upgrade org.apache.tomcat.embed:tomcat-embed-core@10.1.12 to org.apache.tomcat.embed:tomcat-embed-core@10.1.40 to fix
+  ✗ Improper Neutralization (new) [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHETOMCATEMBED-9905136] in org.apache.tomcat.embed:tomcat-embed-core@10.1.12
+    introduced by org.apache.tomcat.embed:tomcat-embed-core@10.1.12
+  ✗ Improper Input Validation [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHETOMCATEMBED-5959654] in org.apache.tomcat.embed:tomcat-embed-core@10.1.12
+    introduced by org.apache.tomcat.embed:tomcat-embed-core@10.1.12
+  ✗ Incomplete Cleanup [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHETOMCATEMBED-5959972] in org.apache.tomcat.embed:tomcat-embed-core@10.1.12
+    introduced by org.apache.tomcat.embed:tomcat-embed-core@10.1.12
+  ✗ Access Restriction Bypass [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHETOMCATEMBED-5862028] in org.apache.tomcat.embed:tomcat-embed-core@10.1.12
+    introduced by org.apache.tomcat.embed:tomcat-embed-core@10.1.12
+  ✗ Improper Cleanup on Thrown Exception (new) [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHETOMCATEMBED-9905132] in org.apache.tomcat.embed:tomcat-embed-core@10.1.12
+    introduced by org.apache.tomcat.embed:tomcat-embed-core@10.1.12
+  ✗ Path Equivalence [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHETOMCATEMBED-9396739] in org.apache.tomcat.embed:tomcat-embed-core@10.1.12
+    introduced by org.apache.tomcat.embed:tomcat-embed-core@10.1.12
+  ✗ Insufficient Session Expiration [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHETOMCATEMBED-7430175] in org.apache.tomcat.embed:tomcat-embed-core@10.1.12
+    introduced by org.apache.tomcat.embed:tomcat-embed-core@10.1.12
+  ✗ Allocation of Resources Without Limits or Throttling [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHETOMCATEMBED-8073090] in org.apache.tomcat.embed:tomcat-embed-core@10.1.12
+    introduced by org.apache.tomcat.embed:tomcat-embed-core@10.1.12
+  ✗ Denial of Service (DoS) [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHETOMCATEMBED-6435948] in org.apache.tomcat.embed:tomcat-embed-core@10.1.12
+    introduced by org.apache.tomcat.embed:tomcat-embed-core@10.1.12
+  ✗ Improper Input Validation [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHETOMCATEMBED-6092281] in org.apache.tomcat.embed:tomcat-embed-core@10.1.12
+    introduced by org.apache.tomcat.embed:tomcat-embed-core@10.1.12
+  ✗ Denial of Service (DoS) [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHETOMCATEMBED-5953331] in org.apache.tomcat.embed:tomcat-embed-core@10.1.12
+    introduced by org.apache.tomcat.embed:tomcat-embed-core@10.1.12
+  ✗ Time-of-check Time-of-use (TOCTOU) Race Condition [Critical Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHETOMCATEMBED-8523186] in org.apache.tomcat.embed:tomcat-embed-core@10.1.12
+    introduced by org.apache.tomcat.embed:tomcat-embed-core@10.1.12
+  ✗ Time-of-check Time-of-use (TOCTOU) Race Condition [Critical Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHETOMCATEMBED-8547999] in org.apache.tomcat.embed:tomcat-embed-core@10.1.12
+    introduced by org.apache.tomcat.embed:tomcat-embed-core@10.1.12
+  ✗ Uncaught Exception [Critical Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHETOMCATEMBED-8383920] in org.apache.tomcat.embed:tomcat-embed-core@10.1.12
+    introduced by org.apache.tomcat.embed:tomcat-embed-core@10.1.12
+
+  Upgrade org.apache.tomcat.embed:tomcat-embed-websocket@10.1.12 to org.apache.tomcat.embed:tomcat-embed-websocket@10.1.19 to fix
+  ✗ Denial of Service (DoS) [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHETOMCATEMBED-6435950] in org.apache.tomcat.embed:tomcat-embed-websocket@10.1.12
+    introduced by org.apache.tomcat.embed:tomcat-embed-websocket@10.1.12
+
+  Upgrade org.springframework.boot:spring-boot-actuator@3.1.3 to org.springframework.boot:spring-boot-actuator@3.1.6 to fix
+  ✗ Denial of Service (DoS) [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGSPRINGFRAMEWORKBOOT-6226862] in org.springframework.boot:spring-boot-actuator@3.1.3
+    introduced by org.springframework.boot:spring-boot-actuator@3.1.3
+
+  Upgrade org.springframework.boot:spring-boot-actuator-autoconfigure@3.1.3 to org.springframework.boot:spring-boot-actuator-autoconfigure@3.3.11 to fix
+  ✗ Improper Input Validation (new) [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGSPRINGFRAMEWORKBOOT-9804539] in org.springframework.boot:spring-boot-actuator-autoconfigure@3.1.3
+    introduced by org.springframework.boot:spring-boot-actuator-autoconfigure@3.1.3
+
+  Upgrade org.springframework:spring-context@6.0.11 to org.springframework:spring-context@6.1.14 to fix
+  ✗ Improper Handling of Case Sensitivity [Low Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGSPRINGFRAMEWORK-8230364] in org.springframework:spring-context@6.0.11
+    introduced by org.springframework:spring-context@6.0.11
+
+  Upgrade org.springframework:spring-core@6.0.11 to org.springframework:spring-core@6.1.14 to fix
+  ✗ Improper Handling of Case Sensitivity [Low Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGSPRINGFRAMEWORK-8230365] in org.springframework:spring-core@6.0.11
+    introduced by org.springframework:spring-core@6.0.11
+
+  Upgrade org.springframework:spring-web@6.0.11 to org.springframework:spring-web@6.1.14 to fix
+  ✗ Improper Handling of Case Sensitivity [Low Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGSPRINGFRAMEWORK-8230366] in org.springframework:spring-web@6.0.11
+    introduced by org.springframework:spring-web@6.0.11
+  ✗ Denial of Service (DoS) [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGSPRINGFRAMEWORK-7687447] in org.springframework:spring-web@6.0.11
+    introduced by org.springframework:spring-web@6.0.11
+  ✗ Open Redirect [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGSPRINGFRAMEWORK-6597980] in org.springframework:spring-web@6.0.11
+    introduced by org.springframework:spring-web@6.0.11
+  ✗ Denial of Service (DoS) [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGSPRINGFRAMEWORK-6091650] in org.springframework:spring-web@6.0.11
+    introduced by org.springframework:spring-web@6.0.11
+  ✗ Open Redirect [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGSPRINGFRAMEWORK-6444790] in org.springframework:spring-web@6.0.11
+    introduced by org.springframework:spring-web@6.0.11
+  ✗ Open Redirect [Critical Severity (originally High)][https://security.snyk.io/vuln/SNYK-JAVA-ORGSPRINGFRAMEWORK-6261586] in org.springframework:spring-web@6.0.11
+    introduced by org.springframework:spring-web@6.0.11
+
+  Upgrade org.springframework:spring-webmvc@6.0.11 to org.springframework:spring-webmvc@6.1.14 to fix
+  ✗ Improper Handling of Case Sensitivity [Low Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGSPRINGFRAMEWORK-8230368] in org.springframework:spring-webmvc@6.0.11
+    introduced by org.springframework:spring-webmvc@6.0.11
+  ✗ Path Traversal [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGSPRINGFRAMEWORK-8230373] in org.springframework:spring-webmvc@6.0.11
+    introduced by org.springframework:spring-webmvc@6.0.11
+  ✗ Path Traversal [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGSPRINGFRAMEWORK-7945490] in org.springframework:spring-webmvc@6.0.11
+    introduced by org.springframework:spring-webmvc@6.0.11
+
+  Upgrade org.yaml:snakeyaml@1.33 to org.yaml:snakeyaml@2.0 to fix
+  ✗ Arbitrary Code Execution [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGYAML-3152153] in org.yaml:snakeyaml@1.33
+    introduced by org.yaml:snakeyaml@1.33
+
+
+License issues:
+
+  ✗ LGPL-2.1 license [Medium Severity][https://snyk.io/vuln/snyk:lic:maven:org.hibernate.orm:hibernate-core:LGPL-2.1] in org.hibernate.orm:hibernate-core@6.2.7.Final
+    introduced by org.hibernate.orm:hibernate-core@6.2.7.Final
+
+  ✗ LGPL-2.1 license [Medium Severity][https://snyk.io/vuln/snyk:lic:maven:org.hibernate.common:hibernate-commons-annotations:LGPL-2.1] in org.hibernate.common:hibernate-commons-annotations@6.0.6.Final
+    introduced by org.hibernate.common:hibernate-commons-annotations@6.0.6.Final
+
+  ✗ EPL-1.0 license [Medium Severity][https://snyk.io/vuln/snyk:lic:maven:org.aspectj:aspectjweaver:EPL-1.0] in org.aspectj:aspectjweaver@1.9.20
+    introduced by org.aspectj:aspectjweaver@1.9.20
+
+  ✗ Dual license: EPL-1.0, MPL-2.0 [Medium Severity][https://snyk.io/vuln/snyk:lic:maven:com.h2database:h2:(EPL-1.0_OR_MPL-2.0)] in com.h2database:h2@2.1.214
+    introduced by com.h2database:h2@2.1.214
+
+  ✗ Dual license: EPL-1.0, LGPL-2.1 [Medium Severity][https://snyk.io/vuln/snyk:lic:maven:ch.qos.logback:logback-core:(EPL-1.0_OR_LGPL-2.1)] in ch.qos.logback:logback-core@1.4.11
+    introduced by ch.qos.logback:logback-core@1.4.11
+
+  ✗ Dual license: EPL-1.0, LGPL-2.1 [Medium Severity][https://snyk.io/vuln/snyk:lic:maven:ch.qos.logback:logback-classic:(EPL-1.0_OR_LGPL-2.1)] in ch.qos.logback:logback-classic@1.4.11
+    introduced by ch.qos.logback:logback-classic@1.4.11
+
+
+
+Organization:      pradeep-snyk-demo
+Package manager:   maven
+Target file:       /app
+Project name:      contactsapp:1.0:/app
+Docker image:      contactsapp:1.0
+Licenses:          enabled
+
+Pro tip: use `--exclude-base-image-vulns` to exclude from display Docker base image vulnerabilities.
+
+Snyk found some vulnerabilities in your image applications (Snyk searches for these vulnerabilities by default). See https://snyk.co/app-vulns for more information.
+
+To remove these messages in the future, please run `snyk config set disableSuggestions=true`
+
+-------------------------------------------------------
+
+Testing contactsapp:1.0...
+
+Organization:      pradeep-snyk-demo
+Package manager:   maven
+Target file:       /usr/local/openjdk-21/lib
+Project name:      contactsapp:1.0:/usr/local/openjdk-21/lib
+Docker image:      contactsapp:1.0
+Licenses:          enabled
+
+✔ Tested contactsapp:1.0 for known issues, no vulnerable paths found.
+
+
+Tested 3 projects, 2 contained vulnerable paths.
+
+
+
