@@ -1,165 +1,161 @@
-Contacts Demo Application
-=========================
+# Intentionally Vulnerable Contacts Demo Application
 
-A Spring Boot REST API with intentional security and code-quality vulnerabilities for demonstration with Snyk.
+> A Spring Boot REST API intentionally designed with security flaws to showcase Snyk’s full lifecycle scanning capabilities.
 
-Prerequisites
--------------
+---
 
--   Java 21 JDK
+## 🔖 Table of Contents
 
--   Maven 3.6+
+1. [Features](#features)
+2. [Prerequisites](#prerequisites)
+3. [Installation & Running](#installation--running)
+4. [Development & Snyk Workflow](#development--snyk-workflow)
+5. [Architecture Diagram](#architecture-diagram)
+6. [API Endpoints](#api-endpoints)
+7. [Vulnerability Demos](#vulnerability-demos)
+8. [Code Quality Smells](#code-quality-smells)
+9. [Snyk Scans](#snyk-scans)
+10. [Contributing](#contributing)
+11. [License](#license)
 
--   (Optional) Docker & Kubernetes CLI
+---
 
--   Snyk CLI ([install instructions](https://snyk.io/))
+## 🌟 Features
 
-Building & Running
-------------------
+- **Intentionally vulnerable**: Includes SQL Injection, RCE, Path Traversal, XSS, SSRF, Insecure Deserialization, XXE, SpEL/JNDI injection, and more.
+- **Code quality smells**: Magic numbers, empty catches, resource leaks, dead code, hard-coded secrets, etc.
+- **Snyk integration**: Works with IDE plugins, CLI, GitHub PR checks, and Actions.
 
-```
-# Compile and run the app
+---
+
+## 🛠 Prerequisites
+
+- **Java 21 JDK**
+- **Maven 3.6+**
+- (Optional) Docker & Kubernetes CLI
+- **Snyk CLI** ([install instructions](https://snyk.io/))
+- **Snyk IDE Plugin** (VS Code, IntelliJ, Eclipse, etc.)
+- **Snyk GitHub App** configured on this repo
+
+---
+
+## 🚀 Installation & Running
+
+```bash
+# Build
 mvn clean package
-mvn spring-boot:run
 
+# Run locally
+mvn spring-boot:run
 ```
 
-The application will start on port **9090**.
+> The service will listen on port **9090** by default.
 
-Endpoints
----------
+---
 
--   **Normal API**
+## ⚙️ Development & Snyk Workflow
 
-    -   `GET /contacts`
+```mermaid
+graph TD
+  A[Developer codes in IDE] --> B{Snyk IDE Plugin}
+  B -- Scans for vulnerabilities --> A
+  A --> C[Commit & Push]
+  C --> D[Pull Request]
+  D --> E{Snyk PR Checks}
+  E -- Reports issues --> D
+  D -- Merge → Main branch --> F[Main]
+  F --> G{GitHub Actions + Snyk}
+  G -- SAST, SCA, IaC scans --> H[Snyk Dashboard]
+  H -- Feedback & fixes --> A
 
-    -   `GET /contacts/{id}`
+  subgraph "Local Dev"
+    A & B
+  end
 
--   **Security Vulnerability Demos**
+  subgraph "CI/CD"
+    C & D & E & F & G
+  end
 
-    -   **SQL Injection**\
-        `GET /contacts/vuln/search?q=<name>`\
-        *Concatenates user input into a native query.*
+  subgraph "Reporting & Insights"
+    H
+  end
+```
 
-    -   **Remote Code Execution (RCE)**\
-        `GET /contacts/vuln/exec?cmd=<shell>`\
-        *Executes arbitrary shell commands via `Runtime.exec`.*
+---
 
--   **Advanced Vulnerability Demos** (`/adv/vuln/*`)
+## 📡 API Endpoints
 
-    -   **Path Traversal**\
-        `GET /contacts/vuln/read-file?path=<file>`\
-        *Reads arbitrary filesystem paths.*
+### Contacts (Normal CRUD)
 
-    -   **Insecure Deserialization**\
-        `POST /contacts/vuln/deserialize`\
-        *Deserializes raw Java objects from the client.*
+| Method | Endpoint               | Description                                      |
+| ------ | ---------------------- | ------------------------------------------------ |
+| GET    | `/contacts`            | List all contacts                                |
+| POST   | `/contacts`            | Create a new contact<br>`{ name, email, phone }` |
+| GET    | `/contacts/{id}`       | Retrieve contact by ID                           |
+| PUT    | `/contacts/{id}`       | Update all fields of a contact                   |
+| PATCH  | `/contacts/{id}`       | Partial update (e.g., email)                     |
+| DELETE | `/contacts/{id}`       | Delete a contact                                 |
 
-    -   **Server-Side Request Forgery (SSRF)**\
-        `GET /contacts/vuln/fetch?url=<remote>`\
-        *Fetches arbitrary URLs via `RestTemplate`.*
+---
 
-    -   **Reflected XSS**\
-        `GET /contacts/vuln/xss?msg=<script>`\
-        *Embeds unescaped input in HTML responses.*
+## 🔓 Vulnerability Demos
 
-    -   **XML External Entity (XXE)**\
-        `POST /adv/vuln/xxe`\
-        *Parses XML without disabling external entities.*
+All under `/vuln/*`:
 
-    -   **SpEL Injection**\
-        `GET /adv/vuln/spel?exp=<spel>`\
-        *Evaluates untrusted Spring Expression Language.*
+- **SQL Injection**: `GET /vuln/search?q=<name>`
+- **RCE / OS Command Injection**: `GET /vuln/exec?cmd=<shell>`
+- **Path Traversal**: `GET /vuln/read-file?path=<file>`
+- **Insecure Deserialization**: `POST /vuln/deserialize`
+- **SSRF**: `GET /vuln/fetch?url=<remote_url>`
+- **Reflected XSS**: `GET /vuln/xss?msg=<payload>`
 
-    -   **JNDI Injection**\
-        `GET /adv/vuln/jndi?name=<jndiUrl>`\
-        *Performs JNDI lookups on user-supplied names.*
+### Advanced Demos (`/adv/vuln/*`)
+- **XXE**: `POST /adv/vuln/xxe`
+- **SpEL Injection**: `GET /adv/vuln/spel?exp=<spel>`
+- **JNDI Injection**: `GET /adv/vuln/jndi?name=<jndiUrl>`
+- **Unsafe Reflection**: `GET /adv/vuln/reflect?className=<class>`
 
-    -   **Unsafe Reflection**\
-        `GET /adv/vuln/reflect?className=<class>`\
-        *Instantiates arbitrary classes via `Class.forName()`.*
+---
 
--   **Code-Quality Smells** (`/quality/*`)
+## 🛠️ Code Quality Smells
 
-    -   Magic numbers, duplicate code, empty catches, resource leaks, blocking calls, too many parameters, mutable statics, dead code
+Under `/quality/*`, find examples of:
+- Magic numbers, duplicate code, empty catches
+- Resource leaks, blocking calls, too many parameters
+- Mutable statics, dead code, hard-coded AWS credentials
 
-    -   Hard-coded AWS credentials (`GET /quality/secrets`)
+---
 
-Vulnerability Explanations
---------------------------
+## 🔍 Snyk Scans
 
--   **SQL Injection**\
-    Building SQL by concatenating user input allows attackers to modify the query logic.
+1. **Snyk Code (SAST)**
+   ```bash
+   snyk code test
+   ```
+2. **Snyk Open Source (SCA)**
+   ```bash
+   snyk test
+   ```
+3. **Snyk IaC**
+   ```bash
+   snyk iac test Dockerfile k8s/**/*.yaml
+   ```
 
--   **RCE / OS Command Injection**\
-    Passing user input directly to `Runtime.exec()` lets attackers run any command on the host.
+> Integrate each into your IDE, CLI, GitHub PRs, and Actions for continuous monitoring.
 
--   **Path Traversal**\
-    Allowing unchecked file paths enables reading or writing arbitrary files on disk.
+---
 
--   **Insecure Deserialization**\
-    Deserializing untrusted data can lead to arbitrary code execution during object reconstruction.
+## 🤝 Contributing
 
--   **SSRF**\
-    Fetching user-provided URLs can expose internal services or metadata endpoints.
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Open a pull request
 
--   **Reflected XSS**\
-    Echoing raw user input into HTML pages risks JavaScript execution in victims' browsers.
+Please include tests or demo scenarios for any new vulnerability or feature.
 
--   **XXE**\
-    Parsing XML with external entities enabled allows reading local files or SSRF via XML constructs.
+---
 
--   **SpEL Injection**\
-    Evaluating user-controlled SpEL expressions can give full access to application internals.
+## 📜 License
 
--   **JNDI Injection**\
-    User-supplied JNDI lookups can load and execute remote code via LDAP/RMI.
-
--   **Unsafe Reflection**\
-    Instantiating classes by name lets attackers create arbitrary objects and invoke their logic.
-
--   **Code-Quality Smells**\
-    Magic numbers, duplicated loops, empty catch blocks, resource leaks, thread-blocking calls, excessive parameters, mutable static fields, and dead code all hurt maintainability and may hide deeper bugs.
-
--   **Hard-Coded Secrets**\
-    Embedding credentials in source code exposes them to anyone with repository access.
-
--   **IaC Misconfigurations**\
-    Unpinned Docker images, running as root, host-path volumes, missing resource limits, privileged containers, and NodePort services all increase attack surface in container and Kubernetes environments.
-
-Snyk Scans
-----------
-
--   **Dependency & Code Vulnerabilities**
-
-    ```
-    snyk test
-
-    ```
-
--   **IaC (Docker & Kubernetes)**
-
-    ```
-    snyk iac test --file=Dockerfile\
-                  --file=k8s/deployment.yaml\
-                  --file=k8s/service.yaml
-
-    ```
-
--   **Code-Quality**
-
-    ```
-    snyk code test
-
-    ```
-
-Next Steps
-----------
-
-1.  Run each demo endpoint to see the flaws in action.
-
-2.  Use Snyk to identify and triage each issue.
-
-3.  Apply recommended fixes (whitelisting, escaping, input validation, remove bad patterns).
-
-4.  Re-run Snyk until you achieve a clean report.
+This project is released under the [MIT License](LICENSE).
