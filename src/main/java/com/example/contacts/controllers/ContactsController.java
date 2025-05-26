@@ -180,8 +180,8 @@ public class ContactsController {
             while ((line = reader.readLine()) != null) {
                 out.append(line).append("\n");
             }
-            return out.toString();
             return StringEscapeUtils.escapeHtml(out.toString());
+        }
     }
 
     /**

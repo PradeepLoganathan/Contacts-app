@@ -72,10 +72,9 @@ public class CodeQualityDemoController {
 
     // 5) THREAD.SLEEP in controller — blocking I/O on request thread
     @GetMapping("/wait")
-    public String waitEndpoint() {
+    public String waitEndpoint() throws InterruptedException {
         Thread.currentThread().interrupt();
-            Thread.sleep(5000);
-        }
+        Thread.sleep(5000);
         return "done";
     }
 
