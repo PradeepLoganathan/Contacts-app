@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contacts App</title>
+  <!-- Materialize CSS CDN -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet" />
+</head>
+<body>
+
+  <nav>
+    <div class="nav-wrapper blue">
+      <a href="#!" class="brand-logo center">Contacts App</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <!-- Contact List View -->
+    <div id="contact-list-view">
+      <h4>Contacts</h4>
+      <a class="btn waves-effect waves-light" id="add-contact-btn">Add Contact</a>
+      <ul class="collection" id="contacts-ul">
+        <!-- Contacts will be populated here -->
+      </ul>
+    </div>
+
+    <!-- Add/Update Contact View -->
+    <div id="contact-form-view" style="display:none;">
+      <h4 id="form-title">Add Contact</h4>
+      <form id="contact-form">
+        <div class="input-field">
+          <input id="name" type="text" required />
+          <label for="name">Name</label>
+        </div>
+        <div class="input-field">
+          <input id="email" type="email" required />
+          <label for="email">Email</label>
+        </div>
+        <div class="input-field">
+          <input id="phone" type="tel" required />
+          <label for="phone">Phone</label>
+        </div>
+        <button class="btn waves-effect waves-light" type="submit" id="save-contact-btn">Save</button>
+        <a class="btn grey lighten-1" id="cancel-btn">Cancel</a>
+      </form>
+    </div>
+  </main>
+
+  <!-- Materialize JS and dependencies -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!-- Your app JS -->
+  <script src="app.js"></script>
+</body>
+</html>
