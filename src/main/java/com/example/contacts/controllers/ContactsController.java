@@ -26,7 +26,7 @@ import jakarta.validation.Valid;
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.InputStreamReader;
-import org.apache.commons.lang.StringEscapeUtils;
+import org.apache.commons.text.StringEscapeUtils;
 import java.io.ObjectInputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -180,7 +180,7 @@ public class ContactsController {
             while ((line = reader.readLine()) != null) {
                 out.append(line).append("\n");
             }
-            return StringEscapeUtils.escapeHtml(out.toString());
+            return StringEscapeUtils.escapeHtml4(out.toString());
         }
     }
 
