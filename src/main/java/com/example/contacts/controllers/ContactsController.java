@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.apache.commons.text.StringEscapeUtils;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -213,7 +214,7 @@ public class ContactsController {
     @GetMapping("/vuln/fetch")
     public String vulnerableFetch(@RequestParam("url") String url) {
         // e.g. ?url=http://169.254.169.254/latest/meta-data/
-        return rest.getForObject(url, String.class);
+        return StringEscapeUtils.escapeHtml4(rest.getForObject(url, String.class));
     }
 
     /**
