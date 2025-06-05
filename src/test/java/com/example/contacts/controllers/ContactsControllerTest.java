@@ -7,10 +7,13 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Import;
+import org.springframework.test.context.ActiveProfiles;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT, classes = {CustomTestConfiguration.class})
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@Import(CustomTestConfiguration.class)
+@ActiveProfiles("test")
 public class ContactsControllerTest {
 
     @Value(value="${local.server.port}")
@@ -23,6 +26,6 @@ public class ContactsControllerTest {
     public void greetingShouldReturnDefaultMessage() throws Exception {
         assertThat(this.restTemplate.getForObject("http://localhost:" +
                    port + "/contacts", String.class)).
-                containsAnyOf("Jerry Smith");
+                containsAnyOf("John Smith");
     }
 }

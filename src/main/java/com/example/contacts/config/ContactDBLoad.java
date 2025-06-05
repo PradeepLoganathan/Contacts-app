@@ -13,9 +13,9 @@ public class ContactDBLoad {
     CommandLineRunner initDatabase(ContactRepository repository) {
 
         return args -> {
-            System.out.println("Preloading " + repository.save(new Contact("John Smith", "123-456-7890", "jsmith@snyk.com")));
-            System.out.println("Preloading " + repository.save(new Contact("Samantha Davis", "098-765-4321", "sdavis@snyk.com")));
-        };
+            System.out.println("Preloading " + repository.save(new Contact("John Smith", "+61412345678", "jsmith@snyk.com")));
+            System.out.println("Preloading " + repository.save(new Contact("Samantha Davis", "+61487654321", "sdavis@snyk.com")));
+            };
     }
 
 }

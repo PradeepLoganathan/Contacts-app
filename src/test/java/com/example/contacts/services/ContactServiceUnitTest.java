@@ -28,7 +28,7 @@ public class ContactServiceUnitTest {
         c.setName("John Doe");
         when(repository.findById(1L)).thenReturn(Optional.of(c));
 
-        Contact result = service.getContactById(1L);
+        Contact result = service.findById(1L).orElse(null);
         assertEquals(c, result);
     }
 }

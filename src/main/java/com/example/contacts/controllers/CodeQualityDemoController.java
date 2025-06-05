@@ -74,7 +74,10 @@ public class CodeQualityDemoController {
     @GetMapping("/wait")
     public String waitEndpoint() {
         Thread.currentThread().interrupt();
+        try {
             Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
         }
         return "done";
     }
