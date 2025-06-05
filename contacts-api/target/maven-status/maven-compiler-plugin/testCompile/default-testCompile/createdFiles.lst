@@ -1,0 +1,5 @@
+com/example/contacts/api/services/ContactValidateEmailIntegrationTest.class
+com/example/contacts/api/services/ContactServiceUnitTest.class
+com/example/contacts/config/CustomTestConfiguration.class
+com/example/contacts/controllers/ContactsControllerTest.class
+com/example/contacts/ContactsApplicationTests.class

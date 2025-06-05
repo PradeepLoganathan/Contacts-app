@@ -1,0 +1,13 @@
+com/example/contacts/repositories/ContactRepository.class
+com/example/contacts/services/EmailService.class
+com/example/contacts/config/RestTemplateConfig.class
+com/example/contacts/controllers/MainController.class
+com/example/contacts/ContactsApplication.class
+com/example/contacts/controllers/CodeQualityDemoController.class
+com/example/contacts/controllers/AdvancedVulnController.class
+com/example/contacts/api/services/ContactService.class
+com/example/contacts/api/models/Contact.class
+com/example/contacts/controllers/ContactsController.class
+com/example/contacts/exception/GlobalExceptionHandler.class
+com/example/contacts/config/CustomActuator.class
+com/example/contacts/config/ContactDBLoad.class
